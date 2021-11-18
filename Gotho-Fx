@@ -1,0 +1,25 @@
+from tkinter import *
+
+root=Tk()
+root.geometry("1000x500")
+root.title("GOTHO-Fx")
+root.resizable(False,False)
+
+Lable(text="GOTHO-Fx",bg="black",fg="white",font=("calibri",33),width=300,height=2).pack()
+
+#menu card
+f=Frame(root,bg="lightgreen",highlightbackground="black",highlightthickness=1,width=300,height=370)
+f.place(x=10,y=118)
+
+
+Lable(f,text="Menu",font=("Gabriola",40,"bold"),fg="black",bg="lightgreen").place(x=80,y=0)
+
+Lable(f,font=("Lucia calligraphy",15,"bold"),text="Dosa........Rs.60/plate",fg="black",bg="lightgreen").place(x=10,y=80)
+Lable(f,font=("Lucia calligraphy",15,"bold"),text="Dosa........Rs.60/plate",fg="black",bg="lightgreen").place(x=10,y=80)
+Lable(f,font=("Lucia calligraphy",15,"bold"),text="Dosa........Rs.60/plate",fg="black",bg="lightgreen").place(x=10,y=80)
+Lable(f,font=("Lucia calligraphy",15,"bold"),text="Dosa........Rs.60/plate",fg="black",bg="lightgreen").place(x=10,y=80)
+Lable(f,font=("Lucia calligraphy",15,"bold"),text="Dosa........Rs.60/plate",fg="black",bg="lightgreen").place(x=10,y=80)
+Lable(f,font=("Lucia calligraphy",15,"bold"),text="Dosa........Rs.60/plate",fg="black",bg="lightgreen").place(x=10,y=80)
+Lable(f,font=("Lucia calligraphy",15,"bold"),text="Dosa........Rs.60/plate",fg="black",bg="lightgreen").place(x=10,y=80)
+
+root.mainloop()

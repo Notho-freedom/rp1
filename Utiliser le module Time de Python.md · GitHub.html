@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa -->
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <link rel="dns-prefetch" href="https://github.githubassets.com/">
+  <link rel="dns-prefetch" href="https://avatars.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+  <link rel="preconnect" href="https://github.githubassets.com/" crossorigin="">
+  <link rel="preconnect" href="https://avatars.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-L06pZD/4Yecj8D8pY5aYfA7oKG6CI8/hlx2K9ZlXOS/j5TnYEjrusaVa9ZIb9O3/tBHmnRFLzaC1ixcafWtaAg==" rel="stylesheet" href="./Utiliser le module Time de Python.md · GitHub_files/light-2f4ea9643ff861e723f03f296396987c.css"><link crossorigin="anonymous" media="all" integrity="sha512-xcx3R1NmKjgOAE2DsCHYbus068pwqr4i3Xaa1osduISrxqYFi3zIaBLqjzt5FM9VSHqFN7mneFXK73Z9a2QRJg==" rel="stylesheet" href="./Utiliser le module Time de Python.md · GitHub_files/dark-c5cc774753662a380e004d83b021d86e.css"><link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all" integrity="sha512-xlDV9el7Cjd+KTSbwspx+c8its28uxn++hLZ9pqYYo1zOVcpLPlElTo42iA/8gV3xYfLvgqRZ3dQPxHCu4UaOQ==" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed-c650d5f5e97b0a377e29349bc2ca71f9.css"><link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" integrity="sha512-jkzjbgytRSAyC4EMcrdpez+aJ2CROSpfemvgO2TImxO6XgWWHNG2qSr2htlD1SL78zfuPXb+iXaVTS5jocG0DA==" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_high_contrast-8e4ce36e0cad4520320b810c72b7697b.css"><link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" integrity="sha512-FzS8HhJ7XSHmx/dBll4FYlvu+8eivvb7jnttZy9KM5plsMkgbEghYKJszrFFauqQvv7ezYdbk7v/d8UtdjG9rw==" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-1734bc1e127b5d21e6c7f741965e0562.css"><link data-color-theme="light_colorblind" crossorigin="anonymous" media="all" integrity="sha512-IpkvxndMpMcO4paMJl83lYTcy18jv2jqG7mHZnTfr9HRV09iMhuQ/HrE+4mQO2nshL7ZLejO1OiVNDQkyVFOCA==" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind-22992fc6774ca4c70ee2968c265f3795.css">
+  <link crossorigin="anonymous" media="all" integrity="sha512-D/GUlt3NiImYB+BNo5z9VfwaXUZJDo9yrNYoLZ1mz9oeiif08nGfNf/F7g5vAzFCupnGq/E+lmMP8MBgj+JiPg==" rel="stylesheet" href="./Utiliser le module Time de Python.md · GitHub_files/frameworks-0ff19496ddcd88899807e04da39cfd55.css">
+    <link crossorigin="anonymous" media="all" integrity="sha512-8hKimTHl2INDYoEVgARR4EEtEGwMmxFK83/A0teAEjc2r+P33QGnOOgjavfUfan2d6U2n7amot12DVKdS+elYg==" rel="stylesheet" href="./Utiliser le module Time de Python.md · GitHub_files/behaviors-f212a29931e5d88343628115800451e0.css">
+    
+    
+    
+    <link crossorigin="anonymous" media="all" integrity="sha512-uJOWqoj+3INQaVfSqynYHz5Sq1UghA0BPLJm55d9UyT63WYRgtYMSs2j2m6sQvBNkBVlXqEV7vg3tamTNY9AcA==" rel="stylesheet" href="./Utiliser le module Time de Python.md · GitHub_files/github-b89396aa88fedc83506957d2ab29d81f.css">
+
+  <script crossorigin="anonymous" defer="defer" integrity="sha512-TkrzrG3TxfwPQcUyhnKtxIi20D6P1nzWBrui17W+sQIi0IICbNCXlvSZH9VqKRuspVoYnI1Lh4FYf4HpMdEgnQ==" type="application/javascript" src="./Utiliser le module Time de Python.md · GitHub_files/environment-4e4af3ac.js.téléchargement"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-T+Fty6cK3u14tkngTKgzamFhxF7VPzfXfRicNCAkJZ59m4aYD6n2BEbENNt6JfaQ8f19rJFE2iKG1253KoPdcg==" type="application/javascript" src="./Utiliser le module Time de Python.md · GitHub_files/chunk-frameworks-4fe16dcb.js.téléchargement"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-EEVns+BtbXW4cq75021HBCPLt8JUH4jfsoPRugxdSFOQb2DVKuWY9Ia5wuL/GKFQgNExOQIv/G/KbupHbZlKyQ==" type="application/javascript" src="./Utiliser le module Time de Python.md · GitHub_files/chunk-vendor-104567b3.js.téléchargement"></script>
+  
+  <script crossorigin="anonymous" defer="defer" integrity="sha512-LlazJMilOGPVxVuxIxGKIRFVUlxYeRlA1tn6D7xpYZjVCutz27JAozhmLS0cmzqcnuwKs3E4gsey44Y9zg3jpg==" type="application/javascript" src="./Utiliser le module Time de Python.md · GitHub_files/behaviors-2e56b324.js.téléchargement"></script>
+  
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-c99sZIyVeuMqCLPOEflJcpe5ZTLv4XTpv/RHIKSC75x3XaP5F2AYUOetvEjfyPVqG0UBzZ87npeIYC51tiQUlg==" type="application/javascript" data-module-id="./chunk-advanced.js" data-src="https://github.githubassets.com/assets/chunk-advanced-73df6c64.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-5tWKSr7mhAzSh4Sx5YRFgKftdGxKwHKnOGYw5DlxjHhkQVURYFU3Bk5IMOGMKuAiJTlC3OXYM3xzGcyjzuEFQQ==" type="application/javascript" data-module-id="./chunk-animate-on-scroll.js" data-src="https://github.githubassets.com/assets/chunk-animate-on-scroll-e6d58a4a.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-KBzZ2cxgHKiYZk5h1aGQXAmyy3coRenQI9E7GacBNdHZQkxEmnoQWtHbncwDLfaC0V1qI9CYz0nfPjKKfD2H9A==" type="application/javascript" data-module-id="./chunk-array.js" data-src="https://github.githubassets.com/assets/chunk-array-281cd9d9.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-QFFTldE+TutfGrG+ynhJq3dZsoSzrxMvjounvvZpiWbBcNg6citMaOhHRhQA7IIX2QKGgQzGRYqdtFdWm8U08w==" type="application/javascript" data-module-id="./chunk-async-export.js" data-src="https://github.githubassets.com/assets/chunk-async-export-40515395.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-1XwXglKLXHju4JnPBvXcCx59aJd5W8bAMlBWJhh9nw1FbgWSDGdPsYOY6AunsaKV34sa5CWT2Y1s93yc8gdl0Q==" type="application/javascript" data-module-id="./chunk-band.js" data-src="https://github.githubassets.com/assets/chunk-band-d57c1782.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-4WvYrRJRmQ2ZUnnaAbNb8z9k169AIo4KGHJy6smtB8YF1Qyf/7m3za/0sw+8MTMOZEAgy/NAaqubQHdfrttiCg==" type="application/javascript" data-module-id="./chunk-codemirror.js" data-src="https://github.githubassets.com/assets/chunk-codemirror-e16bd8ad.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-ol5y71RI6PxIzSuxVDnwevlSWZzk4bNc3O/EjhN5zfx6VPqcyDOAiN9CoTydwOZwe2K3Jmu+85/EV19h4A13Uw==" type="application/javascript" data-module-id="./chunk-color-modes.js" data-src="https://github.githubassets.com/assets/chunk-color-modes-a25e72ef.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-m6QsWXGTVRMlfBzHNHt3JOn1F9/RPKjEaVS/9vCVJbY/C/tglvCT0XEurQ0J+GjxxlwQTjWwbrrTr7TaDIa73A==" type="application/javascript" data-module-id="./chunk-community-contributions.js" data-src="https://github.githubassets.com/assets/chunk-community-contributions-9ba42c59.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-DbpM4Xk+KtL8iCOI+ZACZGMdHN+r6aXCD2Wibv0FOD6mvDnGinYFYfj0BcPOrN5Ku2lJuhXylCh2wNDCLPBBeQ==" type="application/javascript" data-module-id="./chunk-confetti.js" data-src="https://github.githubassets.com/assets/chunk-confetti-0dba4ce1.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-4czyJUh5mQaRoD91+ywKbdzshmUh5mV/lfR1pN4UoAJgdv6jKohy4ECfaziOR2oqkr/HNvtPg+8GpBfrLBkPRw==" type="application/javascript" data-module-id="./chunk-contributions-spider-graph.js" data-src="https://github.githubassets.com/assets/chunk-contributions-spider-graph-e1ccf225.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-vpt2Tdt20tOKRtrRWtOVaRi2wBoAaflNGUR6xuQgU/0Ywfxvbazq0C2hhKwuiC8b6A813gXGm+8fj0NCEosbYQ==" type="application/javascript" data-module-id="./chunk-copy.js" data-src="https://github.githubassets.com/assets/chunk-copy-be9b764d.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-arflMFcVzVAYaP2n7m7gklPChWsVsCDtRPav2Cb6bqLeJf8pgbojWJ3EseKXILCIqfxl/v6arBduZ9SLmpMEZw==" type="application/javascript" data-module-id="./chunk-delayed-loading-element.js" data-src="https://github.githubassets.com/assets/chunk-delayed-loading-element-6ab7e530.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-ArJmpf6aIu8HkrT452vbfFVYYyy1IGqnMUiubZWpWccqPMesMANU8QyPRfIj1LGaaoSIPs32cKPMVliT7S52Rg==" type="application/javascript" data-module-id="./chunk-discussion-page-views.js" data-src="https://github.githubassets.com/assets/chunk-discussion-page-views-02b266a5.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-0MpOmFgMQDS3xYlReLefEbuXTpeUstVxDB3Odim+GqStKnvD0iZNsg3LluwIH8UM+UGvJ2vWblHryL5zxzb9zA==" type="application/javascript" data-module-id="./chunk-discussions-daily-contributors.js" data-src="https://github.githubassets.com/assets/chunk-discussions-daily-contributors-d0ca4e98.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-IllR+ikwWETCdBSLA/itaE4QdHYnFv3auVqnMoXpWnT+/3hQmwRlTyAxvNYx5/VS8BePGRj1qtCgi+smPPkRzQ==" type="application/javascript" data-module-id="./chunk-discussions-new-contributors.js" data-src="https://github.githubassets.com/assets/chunk-discussions-new-contributors-225951fa.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-6j/oSF+kbW+yetNPvI684VzAu9pzug6Vj2h+3u1LdCuRhR4jnuiHZfeQKls3nxcT/S3H+oIt7FtigE/aeoj+gg==" type="application/javascript" data-module-id="./chunk-drag-drop.js" data-src="https://github.githubassets.com/assets/chunk-drag-drop-ea3fe848.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-VSSd+Yzi2iMS+pibY6hD/WdypxAEdob5F2RMKxuKcAHS2EpFYJPeTXoVxt0NXg03tfj2dka2mEtHS+vjpYSaDw==" type="application/javascript" data-module-id="./chunk-edit-hook-secret-element.js" data-src="https://github.githubassets.com/assets/chunk-edit-hook-secret-element-55249df9.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-ErqZFlIt7zIbLoZHvwfq9Zjo5zo+Y1A410nePDGvK+WVTVP10iNTfoqdOOSZNSy1gtLKIWDIIiOV30lr6zUJCA==" type="application/javascript" data-module-id="./chunk-edit.js" src="./Utiliser le module Time de Python.md · GitHub_files/chunk-edit-12ba9916.js.téléchargement"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-aiqMIGGZGo8AQMjcoImKPMTsZVVRl6htCSY7BpRmpGPG/AF+Wq+P/Oj/dthWQOIk9cCNMPEas7O2zAR6oqn0tA==" type="application/javascript" data-module-id="./chunk-emoji-picker-element.js" data-src="https://github.githubassets.com/assets/chunk-emoji-picker-element-6a2a8c20.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-fFTAY01QMbpCtZ6XP5V785IG2ck9GVDq6yAvOQC80wWVVGCpOGKjWvmGCurb7pv4AcVWyHWnS2YMa9DqjLNH1g==" type="application/javascript" data-module-id="./chunk-failbot.js" src="./Utiliser le module Time de Python.md · GitHub_files/chunk-failbot-7c54c063.js.téléchargement"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-ZkvAlIhTXc2WIcJwCAZTzOMz8z0SY27Vuca0MKXovszcXpgqBzO0Q6XJxhMb/dnFXztr26ZsXTTmcfGbCfF+eg==" type="application/javascript" data-module-id="./chunk-feature-callout-element.js" data-src="https://github.githubassets.com/assets/chunk-feature-callout-element-664bc094.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-OszE/6GlmrYt3ALid4xVFd3/4d9cUH08ndFsO7vs/RHCz2bJ8+UsbjBc8wf09hyCOe9PuEgW0HDWpD32xMio2Q==" type="application/javascript" data-module-id="./chunk-filter-input.js" data-src="https://github.githubassets.com/assets/chunk-filter-input-3accc4ff.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-c9ZqvJUGW4fx0ptaK2TiNQtlOs3kqXlMtf3F6P/j6HXCgOaWAvTjQ75FlafdbHV9dUvj6pAmcHImkZ7kvY3BXA==" type="application/javascript" data-module-id="./chunk-get-repo-element.js" data-src="https://github.githubassets.com/assets/chunk-get-repo-element-73d66abc.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-l17BURTC/nyliNO0hxUJljjzeGxPG6DJNLK8Nf8Y1B0PWSat5fN1pFw79zCua/9SR2C1OStSQwYjUf6GXId1wg==" type="application/javascript" data-module-id="./chunk-insights-query.js" data-src="https://github.githubassets.com/assets/chunk-insights-query-975ec151.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-nFgqpzYwgNe9703Z+c2nIhGpyB0V4NNAdr/A+17V34EWdpXDU7uwPskxfQffdNOjXVDHpNfAaZgCgk0tHdkinQ==" type="application/javascript" data-module-id="./chunk-invitations.js" data-src="https://github.githubassets.com/assets/chunk-invitations-9c582aa7.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-D0+Pnb8jOB4EdU4XDkOsBBYVmL2FSOhGSgwoWDp0yvw7GezG/V0cDgbALQ4eSDhr4ghkmPZr859IThH3jIFC5w==" type="application/javascript" data-module-id="./chunk-jump-to.js" data-src="https://github.githubassets.com/assets/chunk-jump-to-0f4f8f9d.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-3q9CgTtVlQ6fkBQRgpwkwOZ+3tHjtGqOJeAI+Vp4bbcig2h1mR9iRJG2ohClN8+YThWAOBxizc8R/yrZPbxNSw==" type="application/javascript" data-module-id="./chunk-launch-code-element.js" data-src="https://github.githubassets.com/assets/chunk-launch-code-element-deaf4281.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-wsUZy3UTRSh6p1qIcqNoHOreDHZaJIPcpjewT8nVUjh+v5pbn8vsTKuYwnbc+0MQ6/9ybSdb98P34Bfyhk7VTw==" type="application/javascript" data-module-id="./chunk-line-chart.js" data-src="https://github.githubassets.com/assets/chunk-line-chart-c2c519cb.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-vmtT5r0gvfYRqPPeAKDO2jCskwQgqay7JXgzcGQtAKb5FGptmF3QpO5MuKfazP4AbOqbgGL3VdhfSs64WE409A==" type="application/javascript" data-module-id="./chunk-line.js" data-src="https://github.githubassets.com/assets/chunk-line-be6b53e6.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-7G7VNhRoIxfK6aKTgUSUtMHI6U0k+szgDfwZIEcKuQKs+K0XZGfVivusB0NlOy78zixfFSI7NHzmvHike+5uyQ==" type="application/javascript" data-module-id="./chunk-metric-selection-element.js" data-src="https://github.githubassets.com/assets/chunk-metric-selection-element-ec6ed536.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-itd9nrOOY2Ya/U6KKraiShXuwuiOyQF6GYHaIL2Qr4ZBtRKox9WWGluHogkzuMJM6i7JYvpoeMyPqVudJvIZWg==" type="application/javascript" data-module-id="./chunk-notification-list-focus.js" src="./Utiliser le module Time de Python.md · GitHub_files/chunk-notification-list-focus-8ad77d9e.js.téléchargement"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-/xVat4sRmT7eTsFSwRwImGBbuM1yYIqpi5hRoxeTbSVVVaP0hDuhWBC+GV02pwtQ7iopApx+Ku/YSnYqip3Xcw==" type="application/javascript" data-module-id="./chunk-overview.js" data-src="https://github.githubassets.com/assets/chunk-overview-ff155ab7.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-Av65L2HA84wzeJh2rkcqqc1PFzlpLUCbvpHm9kPIp8aM4rUCq0Aot66ruui6qvUT71HxvBkSmJAzhBF620Hh+Q==" type="application/javascript" data-module-id="./chunk-premium-runners.js" data-src="https://github.githubassets.com/assets/chunk-premium-runners-02feb92f.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-Ks9TOU0bueYHFjre5Q2R9ZXw4QIZdkfAj3jg+gYXvivybhBQJV9GwpXwZ1Hu9WjZReUUdT4Hc0/bHQ32/m8dSg==" type="application/javascript" data-module-id="./chunk-presence-avatars.js" data-src="https://github.githubassets.com/assets/chunk-presence-avatars-2acf5339.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-4O3AMK3FmKoTDmbBwFGIg+rNW3s73lJFQNLSBF1bczsjNsi8zT2t54vTwY1cMG1dox6Nt11wRGhevi1wxOFhWw==" type="application/javascript" data-module-id="./chunk-profile-pins-element.js" data-src="https://github.githubassets.com/assets/chunk-profile-pins-element-e0edc030.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-hgoSKLTlL8I3IWr/TLONCU+N4kdCtdrHCrrud4NKhgRlLrTw0XUPhqBaDdZUiFSzDQRw/nFQ1kw2VeTm0g9+lA==" type="application/javascript" data-module-id="./chunk-profile.js" data-src="https://github.githubassets.com/assets/chunk-profile-860a1228.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-hZn/aAfLl+K+6mH8kYeRbAyPccRGu/9bq2AjO/Dws5zCtzTn4XXs9c+8WoXbWFc0MjGqvEv/ZAOjUxeAdP3RNw==" type="application/javascript" data-module-id="./chunk-pulse-authors-graph-element.js" data-src="https://github.githubassets.com/assets/chunk-pulse-authors-graph-element-8599ff68.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-pwGf2HLqOsST8Xn6mNp4DgeN42X9qyEMcoZRJT1lpeajtQqvTiQdqaWe5up2u+UwzkkC07yr0s0/HIdP+Sp+dQ==" type="application/javascript" data-module-id="./chunk-readme-toc-element.js" data-src="https://github.githubassets.com/assets/chunk-readme-toc-element-a7019fd8.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-rhladi60G4WRCtFkJAErIB32DBQt6BIMuzFRR0wJ68nWcqex4+C5Xb62rsOSNdluP3kuaSyWT3GTLCDSLv5jIA==" type="application/javascript" data-module-id="./chunk-ref-selector.js" data-src="https://github.githubassets.com/assets/chunk-ref-selector-ae195a76.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-hzhWJlLw3wWm4u/z9EoY6el+S6Pk85+5rIyXGQ8GcJ1yEtk70Jq4dvzaWM/YSUIhOGnnAWit+3Uv+3+B433e9A==" type="application/javascript" data-module-id="./chunk-remote-clipboard-copy.js" data-src="https://github.githubassets.com/assets/chunk-remote-clipboard-copy-87385626.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-/LKZsl3ERMKyDaURymRJAJP580GuJv3+oHE24h8u8vw39lZjVGRXuZ0TEh6czxpKrbIze8qUyDAwG8CnL0F3Vg==" type="application/javascript" data-module-id="./chunk-responsive-underlinenav.js" src="./Utiliser le module Time de Python.md · GitHub_files/chunk-responsive-underlinenav-fcb299b2.js.téléchargement"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-ShLOoLasDpoheZlmsJMsyisBhWzVK366bcgL5BqKSQVV2eVuBMraItd3gIUdX1OM70HYhJbYUb/j9SRQTUZLHw==" type="application/javascript" data-module-id="./chunk-runner-groups.js" data-src="https://github.githubassets.com/assets/chunk-runner-groups-4a12cea0.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-09YbpD1GEUsYveNdpufdpzMUGDNtPuBwv0//0HOZMpOeGDQMRLJ6Ga88fh0UreNq9oAVtzycVpdCGOeG5zCh8A==" type="application/javascript" data-module-id="./chunk-series-table.js" data-src="https://github.githubassets.com/assets/chunk-series-table-d3d61ba4.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-bjSP8StMagdENf3/Xy8fkbUePS7vNbw+2hpgg0tne7zm/eiz3b1mM0XthFTSfxhO9QHFD8wO/hOCcbnORvN3NA==" type="application/javascript" data-module-id="./chunk-severity-calculator-element.js" data-src="https://github.githubassets.com/assets/chunk-severity-calculator-element-6e348ff1.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-0x8YGuZvegnDlzFiJOTIk2yWq2XMsKozVvA/Q22rrRVB7DaNCfs5NX7CgIMjPl090FS6fdaPNBJ4RBycCylZfg==" type="application/javascript" data-module-id="./chunk-slug.js" data-src="https://github.githubassets.com/assets/chunk-slug-d31f181a.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-G8biLDF5USKM3vh3+kjazUXGC1l2nl2xvl7FuhwER5yl+dHZzWk4+y3xZCdtKrrUDjXFL0ZNwZF6225VNzSGOw==" type="application/javascript" data-module-id="./chunk-sortable-behavior.js" data-src="https://github.githubassets.com/assets/chunk-sortable-behavior-1bc6e22c.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-O3v+9HFH+N5F1ykqRHp8u124oCRr74QPyPgyOKNeaBeCBrkm/tLCauEfjCD6HHboM011uOZFMP+6nAHsPUocvw==" type="application/javascript" data-module-id="./chunk-stacked-area-chart.js" data-src="https://github.githubassets.com/assets/chunk-stacked-area-chart-3b7bfef4.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-LBJk1KtSJhKR10A36mskBtvzySPSfgKvZApz7YREWxcW0woS0tJ/BC9Q2FKm1lb9U/rH/szs0oHfAL3A+01l3Q==" type="application/javascript" data-module-id="./chunk-stacks-input-config-view.js" data-src="https://github.githubassets.com/assets/chunk-stacks-input-config-view-2c1264d4.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-DEQRP/uzEpLuk0GmKzm+b2u9bkX0r7abp0sgC+SUTrNOqrsw8+CGCMZRRrDb9doy7agSbXt2PnJkltf1uE8oGQ==" type="application/javascript" data-module-id="./chunk-tag-input.js" src="./Utiliser le module Time de Python.md · GitHub_files/chunk-tag-input-0c44113f.js.téléchargement"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-+ghwIHl4WoTIKefFnsS00RF8wYc+3MqK4eEh1Rst68581JyTbm7O1RxzJjjzlXscQC81/zl70xwhc+SjdReoIA==" type="application/javascript" data-module-id="./chunk-three.module.js" data-src="https://github.githubassets.com/assets/chunk-three.module-fa087020.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-nSaImYvyCFHYd5FJhGCYT8wSQKSl02zyse6g1fuhudwg5fTdZobA8nr78/yRn7Qti0TTLBvzDdKHKR1mHjyfPA==" type="application/javascript" data-module-id="./chunk-tip.js" data-src="https://github.githubassets.com/assets/chunk-tip-9d268899.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-WK8VXw3lfUQ/VRW0zlgKPhcMUqH0uTnB/KzePUPdZhCm/HpxfXXHKTGvj5C0Oex7+zbIM2ECzULbtTCT4ug3yg==" type="application/javascript" data-module-id="./chunk-toast.js" data-src="https://github.githubassets.com/assets/chunk-toast-58af155f.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-/KynWXMAuaT6eIKepLTiNzyz2SKL4H8IYiyKMimDbuxz+nfhyXj1VSDz2Kx1rZF+zQnakKE2X3hwbI/KTw/NQQ==" type="application/javascript" data-module-id="./chunk-tweetsodium.js" data-src="https://github.githubassets.com/assets/chunk-tweetsodium-fcaca759.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-fvcOOYapCxPkDRQWz2WQzrqL6rRhX88yHWF87fb9Xny2Fq4lri0ONaVFL7XDSTiTyu4OTp+8WoyfMVpgGUaaVg==" type="application/javascript" data-module-id="./chunk-unveil.js" data-src="https://github.githubassets.com/assets/chunk-unveil-7ef70e39.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-Fi59NA88/tv2r/zEzeSUnrFT79Gj2BlezXOyd7FWiXoghn+RGGzoSTCiEEE2xyY4d7j8Y4GpRsd5P+eV82HIdQ==" type="application/javascript" data-module-id="./chunk-user-status-submit.js" data-src="https://github.githubassets.com/assets/chunk-user-status-submit-162e7d34.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-68eowaQsnXq41cvVx4Eno5xrSmJkAB/80AABubLZVDpjAcKz97Gy7I8LXfk+8ITaSg1R33noh3/e2HcfdIIgrA==" type="application/javascript" data-module-id="./chunk-voting.js" data-src="https://github.githubassets.com/assets/chunk-voting-ebc7a8c1.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-wQnjXBFgueIl3c4MJVGGbqMThHgUcsOVtWP3vsLqqjRdtPae9B/fXj91Ow2UyzOF3b28lFfDi3jCyrJ+0oc/5g==" type="application/javascript" data-module-id="./chunk-webgl-warp.js" data-src="https://github.githubassets.com/assets/chunk-webgl-warp-c109e35c.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-EqnMERJgPy0yRIjyXpDN2sbijeWiO11r+9uTkts9h053x+/3iP12fUqdIVhKnI/sfzmPQeJTBa91jGFE6HEmkA==" type="application/javascript" src="./Utiliser le module Time de Python.md · GitHub_files/gist-12a9cc11.js.téléchargement"></script>
+
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Utiliser le module Time de Python.md · GitHub</title>
+    <meta name="description" content="GitHub Gist: instantly share code, notes, and snippets.">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://gist.github.com/opensearch-gist.xml" title="Gist">
+  <link rel="fluid-icon" href="https://gist.github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+  <meta name="apple-itunes-app" content="app-id=1477376905">
+    <meta name="twitter:image:src" content="https://github.githubassets.com/images/modules/gists/gist-og-image.png"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Utiliser le module Time de Python.md"><meta name="twitter:description" content="GitHub Gist: instantly share code, notes, and snippets.">
+    <meta property="og:image" content="https://github.githubassets.com/images/modules/gists/gist-og-image.png"><meta property="og:image:alt" content="GitHub Gist: instantly share code, notes, and snippets."><meta property="og:site_name" content="Gist"><meta property="og:type" content="article"><meta property="og:title" content="Utiliser le module Time de Python.md"><meta property="og:url" content="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa"><meta property="og:description" content="GitHub Gist: instantly share code, notes, and snippets."><meta property="article:author" content="262588213843476"><meta property="article:publisher" content="262588213843476">
+    
+
+
+
+    
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  
+
+  <meta name="request-id" content="0AC8:0932:52DF15:792269:617A6DE7" data-pjax-transient="true"><meta name="html-safe-nonce" content="da2a2fff69bc83624b89b9ed13bbe7939c552b8923a6b6cd17cf44c5c2d182ec" data-pjax-transient="true"><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwicmVxdWVzdF9pZCI6IjBBQzg6MDkzMjo1MkRGMTU6NzkyMjY5OjYxN0E2REU3IiwidmlzaXRvcl9pZCI6IjU4NzY2NjA0NTk3NTgwNTU3NTAiLCJyZWdpb25fZWRnZSI6ImZyYSIsInJlZ2lvbl9yZW5kZXIiOiJmcmEifQ==" data-pjax-transient="true"><meta name="visitor-hmac" content="82b861e63a5c37f175bbacfde60b15e328b3b7784bfda1ad21f07a825940dd6a" data-pjax-transient="true">
+
+
+
+  <meta name="github-keyboard-shortcuts" content="" data-pjax-transient="true">
+
+  
+
+  <meta name="selected-link" value="gist_code" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY">
+  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+<meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="gist"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event">
+
+  <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;gist-id&gt;" data-pjax-transient="true">
+
+  
+
+
+
+
+
+
+    <meta name="octolytics-dimension-public" content="true"><meta name="octolytics-dimension-gist_id" content="85860131"><meta name="octolytics-dimension-gist_name" content="1083709633f78e6804602a7ac6ae4bfa"><meta name="octolytics-dimension-anonymous" content="false"><meta name="octolytics-dimension-owner_id" content="35293711"><meta name="octolytics-dimension-owner_login" content="YannBouyeron"><meta name="octolytics-dimension-forked" content="false">
+
+
+      <meta name="hostname" content="gist.github.com">
+    <meta name="user-login" content="">
+
+
+      <meta name="expected-hostname" content="gist.github.com">
+
+
+    <meta name="enabled-features" content="BRANCH_PROTECTION_RULE_WEBHOOK,MARKETPLACE_PENDING_INSTALLATIONS,FILE_UPLOAD_CURSOR_POSITION">
+
+  <meta http-equiv="x-pjax-version" content="ada07b5297dc2479a130a9b4f21b16aa97f9e8eabced41f6b585da76f68e1017">
+  <meta http-equiv="x-pjax-csp-version" content="2961869ef171e90c8991818e57dbe138c0fb830bb3b52e0ab0e81ccb4709c345">
+  <meta http-equiv="x-pjax-css-version" content="3d00179000806a4a36a67b66cadc71523868f72c52c3d6d8683a19fdb0f7f2d2">
+  <meta http-equiv="x-pjax-js-version" content="0b7b0a7891ab72fa88ed6d82d2eff91be316e02ffc1491b6167583f8701247f7">
+  
+
+      <link href="https://gist.github.com/YannBouyeron.atom" rel="alternate" title="atom" type="application/atom+xml">
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-G2XnwUHoQ+OqGe9v2Ipx8TYqx1sT0mpVZO7l6ze4uchJasNB/OamE7RpnIppHxi5A0hl9FFLZoCA5yqPABQ4cA==" rel="stylesheet" href="./Utiliser le module Time de Python.md · GitHub_files/gist-1b65e7c141e843e3aa19ef6fd88a71f1.css">
+
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <meta name="browser-optimizely-client-errors-url" content="https://api.github.com/_private/browser/optimizely_client/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+
+<meta name="theme-color" content="#1e2327">
+<meta name="color-scheme" content="light dark">
+
+
+
+  </head>
+
+  <body class="logged-out env-production page-responsive" style="word-wrap: break-word;">
+    
+
+    <div class="position-relative js-header-wrapper ">
+      <a href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#start-of-content" class="px-2 py-4 color-bg-info-inverse color-text-white show-on-focus js-skip-to-content">Skip to content</a>
+      <span data-view-component="true" class="progress-pjax-loader js-pjax-loader-bar Progress position-fixed width-full">
+    <span style="width: 0%;" data-view-component="true" class="Progress-item progress-pjax-loader-bar color-bg-info-inverse"></span>
+</span>      
+      
+
+
+          <div class="Header js-details-container Details flex-wrap flex-md-nowrap p-responsive" role="banner">
+  <div class="Header-item d-none d-md-flex">
+    <a class="Header-link" data-hotkey="g d" aria-label="Gist Homepage " href="https://gist.github.com/">
+  <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github v-align-middle d-inline-block d-md-none">
+    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+  <svg aria-hidden="true" height="24" viewBox="0 0 45 16" version="1.1" width="67" data-view-component="true" class="octicon octicon-logo-github v-align-middle d-none d-md-inline-block">
+    <path fill-rule="evenodd" d="M18.53 12.03h-.02c.009 0 .015.01.024.011h.006l-.01-.01zm.004.011c-.093.001-.327.05-.574.05-.78 0-1.05-.36-1.05-.83V8.13h1.59c.09 0 .16-.08.16-.19v-1.7c0-.09-.08-.17-.16-.17h-1.59V3.96c0-.08-.05-.13-.14-.13h-2.16c-.09 0-.14.05-.14.13v2.17s-1.09.27-1.16.28c-.08.02-.13.09-.13.17v1.36c0 .11.08.19.17.19h1.11v3.28c0 2.44 1.7 2.69 2.86 2.69.53 0 1.17-.17 1.27-.22.06-.02.09-.09.09-.16v-1.5a.177.177 0 00-.146-.18zM42.23 9.84c0-1.81-.73-2.05-1.5-1.97-.6.04-1.08.34-1.08.34v3.52s.49.34 1.22.36c1.03.03 1.36-.34 1.36-2.25zm2.43-.16c0 3.43-1.11 4.41-3.05 4.41-1.64 0-2.52-.83-2.52-.83s-.04.46-.09.52c-.03.06-.08.08-.14.08h-1.48c-.1 0-.19-.08-.19-.17l.02-11.11c0-.09.08-.17.17-.17h2.13c.09 0 .17.08.17.17v3.77s.82-.53 2.02-.53l-.01-.02c1.2 0 2.97.45 2.97 3.88zm-8.72-3.61h-2.1c-.11 0-.17.08-.17.19v5.44s-.55.39-1.3.39-.97-.34-.97-1.09V6.25c0-.09-.08-.17-.17-.17h-2.14c-.09 0-.17.08-.17.17v5.11c0 2.2 1.23 2.75 2.92 2.75 1.39 0 2.52-.77 2.52-.77s.05.39.08.45c.02.05.09.09.16.09h1.34c.11 0 .17-.08.17-.17l.02-7.47c0-.09-.08-.17-.19-.17zm-23.7-.01h-2.13c-.09 0-.17.09-.17.2v7.34c0 .2.13.27.3.27h1.92c.2 0 .25-.09.25-.27V6.23c0-.09-.08-.17-.17-.17zm-1.05-3.38c-.77 0-1.38.61-1.38 1.38 0 .77.61 1.38 1.38 1.38.75 0 1.36-.61 1.36-1.38 0-.77-.61-1.38-1.36-1.38zm16.49-.25h-2.11c-.09 0-.17.08-.17.17v4.09h-3.31V2.6c0-.09-.08-.17-.17-.17h-2.13c-.09 0-.17.08-.17.17v11.11c0 .09.09.17.17.17h2.13c.09 0 .17-.08.17-.17V8.96h3.31l-.02 4.75c0 .09.08.17.17.17h2.13c.09 0 .17-.08.17-.17V2.6c0-.09-.08-.17-.17-.17zM8.81 7.35v5.74c0 .04-.01.11-.06.13 0 0-1.25.89-3.31.89-2.49 0-5.44-.78-5.44-5.92S2.58 1.99 5.1 2c2.18 0 3.06.49 3.2.58.04.05.06.09.06.14L7.94 4.5c0 .09-.09.2-.2.17-.36-.11-.9-.33-2.17-.33-1.47 0-3.05.42-3.05 3.73s1.5 3.7 2.58 3.7c.92 0 1.25-.11 1.25-.11v-2.3H4.88c-.11 0-.19-.08-.19-.17V7.35c0-.09.08-.17.19-.17h3.74c.11 0 .19.08.19.17z"></path>
+</svg>
+  <svg aria-hidden="true" height="24" viewBox="0 0 25 16" version="1.1" width="37" data-view-component="true" class="octicon octicon-logo-gist v-align-middle d-none d-md-inline-block">
+    <path fill-rule="evenodd" d="M4.7 8.73h2.45v4.02c-.55.27-1.64.34-2.53.34-2.56 0-3.47-2.2-3.47-5.05 0-2.85.91-5.06 3.48-5.06 1.28 0 2.06.23 3.28.73V2.66C7.27 2.33 6.25 2 4.63 2 1.13 2 0 4.69 0 8.03c0 3.34 1.11 6.03 4.63 6.03 1.64 0 2.81-.27 3.59-.64V7.73H4.7v1zm6.39 3.72V6.06h-1.05v6.28c0 1.25.58 1.72 1.72 1.72v-.89c-.48 0-.67-.16-.67-.7v-.02zm.25-8.72c0-.44-.33-.78-.78-.78s-.77.34-.77.78.33.78.77.78.78-.34.78-.78zm4.34 5.69c-1.5-.13-1.78-.48-1.78-1.17 0-.77.33-1.34 1.88-1.34 1.05 0 1.66.16 2.27.36v-.94c-.69-.3-1.52-.39-2.25-.39-2.2 0-2.92 1.2-2.92 2.31 0 1.08.47 1.88 2.73 2.08 1.55.13 1.77.63 1.77 1.34 0 .73-.44 1.42-2.06 1.42-1.11 0-1.86-.19-2.33-.36v.94c.5.2 1.58.39 2.33.39 2.38 0 3.14-1.2 3.14-2.41 0-1.28-.53-2.03-2.75-2.23h-.03zm8.58-2.47v-.86h-2.42v-2.5l-1.08.31v2.11l-1.56.44v.48h1.56v5c0 1.53 1.19 2.13 2.5 2.13.19 0 .52-.02.69-.05v-.89c-.19.03-.41.03-.61.03-.97 0-1.5-.39-1.5-1.34V6.94h2.42v.02-.01z"></path>
+</svg>
+</a>
+  </div>
+
+  <div class="Header-item d-md-none">
+    <button aria-label="Toggle navigation" aria-expanded="false" type="button" data-view-component="true" class="Header-link js-details-target btn-link">
+  
+  
+      <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true" class="octicon octicon-three-bars">
+    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+</svg>
+
+  
+
+</button>  </div>
+
+  <div class="Header-item Header-item--full js-site-search flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div class="header-search flex-self-stretch flex-md-self-auto mr-0 mr-md-3 mb-3 mb-md-0">
+  <!-- '"` --><!-- </textarea></xmp> --><form class="position-relative js-quicksearch-form" role="search" aria-label="Site" action="https://gist.github.com/search" accept-charset="UTF-8" method="get">
+    <div class="header-search-wrapper form-control input-sm js-chromeless-input-container">
+      <input type="text" class="form-control input-sm js-site-search-focus header-search-input" data-hotkey="s,/" name="q" aria-label="Search" placeholder="Search…" autocorrect="off" autocomplete="off" autocapitalize="off">
+    </div>
+
+</form></div>
+
+
+    <nav aria-label="Global" class="d-flex flex-column flex-md-row flex-self-stretch flex-md-self-auto">
+  <a class="Header-link mr-0 mr-md-3 py-2 py-md-0 border-top border-md-top-0 border-white-fade" data-ga-click="Header, go to all gists, text:all gists" href="https://gist.github.com/discover">All gists</a>
+
+  <a class="Header-link mr-0 mr-md-3 py-2 py-md-0 border-top border-md-top-0 border-white-fade" data-ga-click="Header, go to GitHub, text:Back to GitHub" href="https://github.com/">Back to GitHub</a>
+
+    <a class="Header-link d-block d-md-none mr-0 mr-md-3 py-2 py-md-0 border-top border-md-top-0 border-white-fade" data-ga-click="Header, sign in" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="9049545e44cf4e01c6b6f8d6bd67768fc0f7952410137a7091dbdd9670694272" href="https://gist.github.com/auth/github?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa">
+      Sign in
+</a>
+      <a class="Header-link d-block d-md-none mr-0 mr-md-3 py-2 py-md-0 border-top border-md-top-0 border-white-fade" data-ga-click="Header, sign up" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="3e2c51986f64b533eba407bfa0d36bff793a119053b2ec6ba35cf122d0f43344" href="https://gist.github.com/join?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa&amp;source=header-gist">
+        Sign up
+</a></nav>
+
+  </div>
+
+  <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+    <a class="Header-link" data-hotkey="g d" aria-label="Gist Homepage " href="https://gist.github.com/">
+  <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github v-align-middle d-inline-block d-md-none">
+    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+  <svg aria-hidden="true" height="24" viewBox="0 0 45 16" version="1.1" width="67" data-view-component="true" class="octicon octicon-logo-github v-align-middle d-none d-md-inline-block">
+    <path fill-rule="evenodd" d="M18.53 12.03h-.02c.009 0 .015.01.024.011h.006l-.01-.01zm.004.011c-.093.001-.327.05-.574.05-.78 0-1.05-.36-1.05-.83V8.13h1.59c.09 0 .16-.08.16-.19v-1.7c0-.09-.08-.17-.16-.17h-1.59V3.96c0-.08-.05-.13-.14-.13h-2.16c-.09 0-.14.05-.14.13v2.17s-1.09.27-1.16.28c-.08.02-.13.09-.13.17v1.36c0 .11.08.19.17.19h1.11v3.28c0 2.44 1.7 2.69 2.86 2.69.53 0 1.17-.17 1.27-.22.06-.02.09-.09.09-.16v-1.5a.177.177 0 00-.146-.18zM42.23 9.84c0-1.81-.73-2.05-1.5-1.97-.6.04-1.08.34-1.08.34v3.52s.49.34 1.22.36c1.03.03 1.36-.34 1.36-2.25zm2.43-.16c0 3.43-1.11 4.41-3.05 4.41-1.64 0-2.52-.83-2.52-.83s-.04.46-.09.52c-.03.06-.08.08-.14.08h-1.48c-.1 0-.19-.08-.19-.17l.02-11.11c0-.09.08-.17.17-.17h2.13c.09 0 .17.08.17.17v3.77s.82-.53 2.02-.53l-.01-.02c1.2 0 2.97.45 2.97 3.88zm-8.72-3.61h-2.1c-.11 0-.17.08-.17.19v5.44s-.55.39-1.3.39-.97-.34-.97-1.09V6.25c0-.09-.08-.17-.17-.17h-2.14c-.09 0-.17.08-.17.17v5.11c0 2.2 1.23 2.75 2.92 2.75 1.39 0 2.52-.77 2.52-.77s.05.39.08.45c.02.05.09.09.16.09h1.34c.11 0 .17-.08.17-.17l.02-7.47c0-.09-.08-.17-.19-.17zm-23.7-.01h-2.13c-.09 0-.17.09-.17.2v7.34c0 .2.13.27.3.27h1.92c.2 0 .25-.09.25-.27V6.23c0-.09-.08-.17-.17-.17zm-1.05-3.38c-.77 0-1.38.61-1.38 1.38 0 .77.61 1.38 1.38 1.38.75 0 1.36-.61 1.36-1.38 0-.77-.61-1.38-1.36-1.38zm16.49-.25h-2.11c-.09 0-.17.08-.17.17v4.09h-3.31V2.6c0-.09-.08-.17-.17-.17h-2.13c-.09 0-.17.08-.17.17v11.11c0 .09.09.17.17.17h2.13c.09 0 .17-.08.17-.17V8.96h3.31l-.02 4.75c0 .09.08.17.17.17h2.13c.09 0 .17-.08.17-.17V2.6c0-.09-.08-.17-.17-.17zM8.81 7.35v5.74c0 .04-.01.11-.06.13 0 0-1.25.89-3.31.89-2.49 0-5.44-.78-5.44-5.92S2.58 1.99 5.1 2c2.18 0 3.06.49 3.2.58.04.05.06.09.06.14L7.94 4.5c0 .09-.09.2-.2.17-.36-.11-.9-.33-2.17-.33-1.47 0-3.05.42-3.05 3.73s1.5 3.7 2.58 3.7c.92 0 1.25-.11 1.25-.11v-2.3H4.88c-.11 0-.19-.08-.19-.17V7.35c0-.09.08-.17.19-.17h3.74c.11 0 .19.08.19.17z"></path>
+</svg>
+  <svg aria-hidden="true" height="24" viewBox="0 0 25 16" version="1.1" width="37" data-view-component="true" class="octicon octicon-logo-gist v-align-middle d-none d-md-inline-block">
+    <path fill-rule="evenodd" d="M4.7 8.73h2.45v4.02c-.55.27-1.64.34-2.53.34-2.56 0-3.47-2.2-3.47-5.05 0-2.85.91-5.06 3.48-5.06 1.28 0 2.06.23 3.28.73V2.66C7.27 2.33 6.25 2 4.63 2 1.13 2 0 4.69 0 8.03c0 3.34 1.11 6.03 4.63 6.03 1.64 0 2.81-.27 3.59-.64V7.73H4.7v1zm6.39 3.72V6.06h-1.05v6.28c0 1.25.58 1.72 1.72 1.72v-.89c-.48 0-.67-.16-.67-.7v-.02zm.25-8.72c0-.44-.33-.78-.78-.78s-.77.34-.77.78.33.78.77.78.78-.34.78-.78zm4.34 5.69c-1.5-.13-1.78-.48-1.78-1.17 0-.77.33-1.34 1.88-1.34 1.05 0 1.66.16 2.27.36v-.94c-.69-.3-1.52-.39-2.25-.39-2.2 0-2.92 1.2-2.92 2.31 0 1.08.47 1.88 2.73 2.08 1.55.13 1.77.63 1.77 1.34 0 .73-.44 1.42-2.06 1.42-1.11 0-1.86-.19-2.33-.36v.94c.5.2 1.58.39 2.33.39 2.38 0 3.14-1.2 3.14-2.41 0-1.28-.53-2.03-2.75-2.23h-.03zm8.58-2.47v-.86h-2.42v-2.5l-1.08.31v2.11l-1.56.44v.48h1.56v5c0 1.53 1.19 2.13 2.5 2.13.19 0 .52-.02.69-.05v-.89c-.19.03-.41.03-.61.03-.97 0-1.5-.39-1.5-1.34V6.94h2.42v.02-.01z"></path>
+</svg>
+</a>
+  </div>
+
+    <div class="Header-item f4 mr-0" role="navigation">
+      <a class="HeaderMenu-link no-underline mr-3" data-ga-click="Header, sign in" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="9049545e44cf4e01c6b6f8d6bd67768fc0f7952410137a7091dbdd9670694272" href="https://gist.github.com/auth/github?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa">
+        Sign&nbsp;in
+</a>        <a class="HeaderMenu-link d-inline-block no-underline border color-border-tertiary rounded px-2 py-1" data-ga-click="Header, sign up" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="3e2c51986f64b533eba407bfa0d36bff793a119053b2ec6ba35cf122d0f43344" href="https://gist.github.com/join?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa&amp;source=header-gist">
+          Sign&nbsp;up
+</a>    </div>
+</div>
+
+
+
+    </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+
+
+
+
+    <div data-pjax-replace="" id="js-flash-container">
+
+
+  <template class="js-flash-template"></template>
+</div>
+
+
+    
+
+  <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
+
+
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled="" data-discussion-hovercards-enabled="" data-issue-and-pr-hovercards-enabled="">
+        <div itemscope="" itemtype="http://schema.org/Code">
+    <main id="gist-pjax-container" data-pjax-container="">
+      
+
+
+  <div class="gist-detail-intro gist-banner pb-3">
+    <div class="text-center container-lg px-3">
+      <p class="lead">
+        Instantly share code, notes, and snippets.
+      </p>
+    </div>
+  </div>
+
+
+<div class="gisthead pagehead pb-0 pt-3 mb-4">
+  <div class="px-0">
+    
+  
+
+<div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+  <div class="flex-auto min-width-0 width-fit mr-3">
+    <div class="d-flex">
+      <div class="d-none d-md-block">
+        <a class="mr-2 flex-shrink-0" data-hovercard-type="user" data-hovercard-url="/users/YannBouyeron/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://gist.github.com/YannBouyeron"><img class="avatar avatar-user" src="./Utiliser le module Time de Python.md · GitHub_files/35293711" width="32" height="32" alt="@YannBouyeron"></a>
+      </div>
+      <div class="d-flex flex-column width-full">
+          <div class="d-flex flex-row width-full">
+            <h1 class="wb-break-word f3 text-normal mb-md-0 mb-1">
+              <span class="author"><a data-hovercard-type="user" data-hovercard-url="/users/YannBouyeron/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://gist.github.com/YannBouyeron">YannBouyeron</a></span><!--
+                  --><span class="mx-1 color-text-secondary">/</span><!--
+                  --><strong itemprop="name" class="css-truncate-target mr-1" style="max-width: 410px"><a href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa">Utiliser le module Time de Python.md</a></strong>
+            </h1>
+
+        </div>
+
+        <div class="note m-0">
+          Created <time-ago datetime="2018-01-22T19:43:48Z" data-view-component="true" class="no-wrap" title="22 janv. 2018, 20:43 UTC+1">4 years ago</time-ago>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="d-md-flex d-none pagehead-actions float-none">
+
+
+
+      <li>
+          <a class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a gist" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist star button&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5f8adfe31a344cb9dc96a6949d8d537ae7099d5f0a4ac1b233e8ee581da316a2" href="https://gist.github.com/login?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg>
+    Star
+</a>
+    <a class="social-count" aria-label="0 users starred this gist" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa/stargazers">
+      0
+</a>
+      </li>
+
+        <li>
+            <a class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a gist" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist fork button&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5c88384da38f1fc0a8902294938e7dff70301f59689662610083d6bbe7b03ddb" href="https://gist.github.com/login?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo-forked">
+    <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
+</svg>
+    Fork
+</a>    <span class="social-count">0</span>
+
+        </li>
+  </ul>
+</div>
+
+  <div class="d-block d-md-none px-3 px-md-3 px-lg-5 mb-3">
+      <a class="btn btn-sm btn-block tooltipped tooltipped-n" aria-label="You must be signed in to star a gist" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;gist star button&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5f8adfe31a344cb9dc96a6949d8d537ae7099d5f0a4ac1b233e8ee581da316a2" href="https://gist.github.com/login?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg>
+    Star
+</a>
+
+  </div>
+
+<div class="d-flex flex-md-row flex-column px-0 pr-md-3 px-lg-5">
+  <div class="flex-md-order-1 flex-order-2 flex-auto">
+    <nav class="UnderlineNav box-shadow-none px-3 px-lg-0 " aria-label="Gist" data-pjax="#gist-pjax-container">
+
+  <div class="UnderlineNav-body">
+    <a class="js-selected-navigation-item selected UnderlineNav-item" data-pjax="true" data-hotkey="g c" aria-current="page" data-selected-links="gist_code /YannBouyeron/1083709633f78e6804602a7ac6ae4bfa" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-code UnderlineNav-octicon">
+    <path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path>
+</svg>
+      Code
+</a>
+      <a class="js-selected-navigation-item UnderlineNav-item" data-pjax="true" data-hotkey="g r" data-selected-links="gist_revisions /YannBouyeron/1083709633f78e6804602a7ac6ae4bfa/revisions" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa/revisions">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-git-commit">
+    <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"></path>
+</svg>
+        Revisions
+        <span title="1" data-view-component="true" class="Counter hx_reponav_item_counter">1</span>
+</a>
+
+  </div>
+</nav>
+
+  </div>
+
+  <div class="d-md-flex d-none flex-items-center flex-md-order-2 flex-order-1 file-navigation-options" data-multiple="">
+
+    <div class="d-lg-table d-none">
+      <div class="file-navigation-option v-align-middle">
+
+  <div class="d-md-flex d-none">
+    <div class="input-group">
+      <div class="input-group-button">
+        <details class="details-reset details-overlay select-menu">
+          <summary data-ga-click="Repository, clone Embed, location:repo overview" role="button" data-view-component="true" class="select-menu-button btn-sm btn" aria-haspopup="menu">
+  
+  
+            <span data-menu-button="">Embed</span>
+
+  
+
+</summary>          <details-menu class="select-menu-modal position-absolute" data-menu-input="gist-share-url" style="z-index: 99;" aria-label="Clone options" role="menu">
+            <div class="select-menu-header">
+              <span class="select-menu-title">What would you like to do?</span>
+            </div>
+            <div class="select-menu-list">
+                <button name="button" type="button" class="select-menu-item width-full" aria-checked="true" role="menuitemradio" value="&lt;script src=&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa.js&quot;&gt;&lt;/script&gt;" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;EMBED&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:85860131,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="59b0d1498165e98604414318055a4086988aad532f2f0e7cc2a45ac35603c09c">
+                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check select-menu-item-icon">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                  <div class="select-menu-item-text">
+                    <span class="select-menu-item-heading" data-menu-button-text="">
+                      
+                      Embed
+                    </span>
+                      <span class="description">
+                        Embed this gist in your website.
+                      </span>
+                  </div>
+</button>                <button name="button" type="button" class="select-menu-item width-full" aria-checked="false" role="menuitemradio" value="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;SHARE&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:85860131,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="dfa6566a46b6b7512b066ec4c9629c58df4293fd85c1689a70cd90bf91ef5bc0">
+                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check select-menu-item-icon">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                  <div class="select-menu-item-text">
+                    <span class="select-menu-item-heading" data-menu-button-text="">
+                      
+                      Share
+                    </span>
+                      <span class="description">
+                        Copy sharable link for this gist.
+                      </span>
+                  </div>
+</button>                <button name="button" type="button" class="select-menu-item width-full" aria-checked="false" role="menuitemradio" value="https://gist.github.com/1083709633f78e6804602a7ac6ae4bfa.git" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;USE_HTTPS&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:85860131,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="53e83db6341261467aa5815bca64707172f5df76374483c033b54f98cc512e19">
+                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check select-menu-item-icon">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                  <div class="select-menu-item-text">
+                    <span class="select-menu-item-heading" data-menu-button-text="">
+                      Clone via
+                      HTTPS
+                    </span>
+                      <span class="description">
+                        Clone with Git or checkout with SVN using the repository’s web address.
+                      </span>
+                  </div>
+</button>            </div>
+            <div class="select-menu-list">
+              <a role="link" class="select-menu-item select-menu-action" href="https://docs.github.com/articles/which-remote-url-should-i-use" target="_blank">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-question select-menu-item-icon">
+    <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 00-.313.195 2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 008 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 101.342.67z"></path>
+</svg>
+                <div class="select-menu-item-text">
+                  Learn more about clone URLs
+                </div>
+              </a>
+            </div>
+          </details-menu>
+        </details>
+      </div>
+
+      <input id="gist-share-url" type="text" data-autoselect="" class="form-control input-monospace input-sm" value="&lt;script src=&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa.js&quot;&gt;&lt;/script&gt;" aria-label="Clone this repository at &lt;script src=&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa.js&quot;&gt;&lt;/script&gt;" readonly="">
+
+      <div class="input-group-button">
+        <clipboard-copy for="gist-share-url" aria-label="Copy to clipboard" class="btn btn-sm zeroclipboard-button" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:85860131,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a92ce768e1666cdc0dcdac10bdaf6905fc22d370b4d627f88df189e491962d29" tabindex="0" role="button"><svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg></clipboard-copy>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div class="ml-2 file-navigation-option">
+    <a class="btn btn-sm tooltipped tooltipped-s tooltipped-multiline js-remove-unless-platform" data-platforms="windows,mac" aria-label="Save YannBouyeron/1083709633f78e6804602a7ac6ae4bfa to your computer and use it in GitHub Desktop." data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;OPEN_IN_DESKTOP&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:85860131,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="43f13cc907860b59144c04283cc87300e4ea0e28d0e3062c45aa072ac67ff3d0" href="https://desktop.github.com/"><svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-desktop-download">
+    <path d="M4.927 5.427l2.896 2.896a.25.25 0 00.354 0l2.896-2.896A.25.25 0 0010.896 5H8.75V.75a.75.75 0 10-1.5 0V5H5.104a.25.25 0 00-.177.427z"></path><path d="M1.573 2.573a.25.25 0 00-.073.177v7.5a.25.25 0 00.25.25h12.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-3a.75.75 0 110-1.5h3A1.75 1.75 0 0116 2.75v7.5A1.75 1.75 0 0114.25 12h-3.727c.099 1.041.52 1.872 1.292 2.757A.75.75 0 0111.25 16h-6.5a.75.75 0 01-.565-1.243c.772-.885 1.192-1.716 1.292-2.757H1.75A1.75 1.75 0 010 10.25v-7.5A1.75 1.75 0 011.75 1h3a.75.75 0 010 1.5h-3a.25.25 0 00-.177.073zM6.982 12a5.72 5.72 0 01-.765 2.5h3.566a5.72 5.72 0 01-.765-2.5H6.982z"></path>
+</svg></a>
+</div>
+
+
+    <div class="ml-2">
+      <a class="btn btn-sm" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;DOWNLOAD_ZIP&quot;,&quot;git_repository_type&quot;:&quot;GIST&quot;,&quot;gist_id&quot;:85860131,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="2c600151150eceeb92c7ea3847a88dabd224b31bb3c749adc176c4a0bcceb3e6" data-ga-click="Gist, download zip, location:gist overview" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa/archive/07a2579b8f2ac782f40d15dca53727f5f17a1ac6.zip">Download ZIP</a>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="container-lg px-3 new-discussion-timeline">
+  <div class="repository-content gist-content">
+    
+  <div>
+    
+
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-utiliser-le-module-time-de-python-md" class="file my-2">
+      <div class="file-header d-flex flex-md-items-center flex-items-start">
+        <div class="file-actions flex-order-2 pt-0">
+
+          <a href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa/raw/07a2579b8f2ac782f40d15dca53727f5f17a1ac6/Utiliser%2520le%2520module%2520Time%2520de%2520Python.md" role="button" data-view-component="true" class="btn-sm btn">
+  
+  Raw
+  
+
+</a>
+        </div>
+        <div class="file-info pr-4 d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+          <span class="mr-1">
+            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-code-square color-icon-secondary">
+    <path fill-rule="evenodd" d="M1.75 1.5a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25H1.75zM0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0114.25 16H1.75A1.75 1.75 0 010 14.25V1.75zm9.22 3.72a.75.75 0 000 1.06L10.69 8 9.22 9.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM6.78 6.53a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 101.06-1.06L5.31 8l1.47-1.47z"></path>
+</svg>
+          </span>
+          <a class="wb-break-all" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#file-utiliser-le-module-time-de-python-md">
+            <strong class="user-select-contain gist-blob-name css-truncate-target">
+              Utiliser le module Time de Python.md
+            </strong>
+          </a>
+        </div>
+      </div>
+      <div id="file-utiliser-le-module-time-de-python-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-utiliser-le-module-time-de-python" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#utiliser-le-module-time-de-python"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Utiliser le module Time de Python.</h1>
+<h3><a id="user-content-importer-le-module-time" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#importer-le-module-time"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Importer le module Time.</h3>
+<pre><code>import time
+</code></pre>
+<h3><a id="user-content-le-temps-timestamp-écoulé-depuis-lepoch-unix" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#le-temps-timestamp-%C3%A9coul%C3%A9-depuis-lepoch-unix"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Le temps "timestamp" écoulé depuis l'Epoch Unix.</h3>
+<p>L'epoch unix est une date de reference (1er janvier 1970 à 00:00:00.). La fonction time() mesure le "timestamp" ou temps en secondes depuis cette référence.</p>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; t = time.time()
+&gt;&gt;&gt; t
+1458557173.523102
+</code></pre>
+<h3><a id="user-content-la-date-et-heure-locale" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#la-date-et-heure-locale"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>La date et heure locale.</h3>
+<p>La fonction localtime() renvoie la date et l'heure de votre méridien dans une tuple (liste non modifiable).</p>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; t = time.localtime()
+&gt;&gt;&gt; t
+time.struct_time(tm_year=2016, tm_mon=3, tm_mday=21, tm_hour=10, tm_min=48, tm_sec=0, tm_wday=0, tm_yday=81, tm_isdst=0)
+</code></pre>
+<p>Pour extraire seulement le jour de cette tuple::</p>
+<pre><code>&gt;&gt;&gt; jour = t[2]
+&gt;&gt;&gt; jour
+21
+</code></pre>
+<h3><a id="user-content-la-date-et-heure-du-méridien-de-greenwich" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#la-date-et-heure-du-m%C3%A9ridien-de-greenwich"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>La date et heure du méridien de Greenwich.</h3>
+<p>Utilisez la fonction gmtime() qui fonctionne de la même façon que localtime().</p>
+<p>Ici (à Dakar) il n'y a pas de différence entre l'heure locale et l'heure de référence de Greenwich.</p>
+<h3><a id="user-content-formater-le-temps-avec-strftime" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#formater-le-temps-avec-strftime"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Formater le temps avec strftime.</h3>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; t1 = time.strftime("%A %d %B %Y %H:%M:%S")
+&gt;&gt;&gt; t1
+'Monday 21 March 2016 10:58:41'
+
+&gt;&gt;&gt; t2 = time.strftime("%H:%M:%S")
+&gt;&gt;&gt; t2
+'10:59:12'
+
+&gt;&gt;&gt; t3 = time.strftime("%A %d %B %Y")
+&gt;&gt;&gt; t3
+'Monday 21 March 2016'
+</code></pre>
+<h3><a id="user-content-mesurer-le-temps-écoulé" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#mesurer-le-temps-%C3%A9coul%C3%A9"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Mesurer le temps écoulé.</h3>
+<p>On mesure ci-dessous le temps d'exécution de la boucle while.  (C'est un exemple, on pourrait mesurer le temps d'exécution de n'importe quelle fonction)</p>
+<pre><code>import time
+
+t0 = time.time()
+
+x = 0
+while x &lt; 10000:
+	x = x + 1
+	
+tf = time.time()
+dt = tf-t0
+</code></pre>
+<p>Résultat:</p>
+<pre><code>&gt;&gt;&gt; t0
+1458558487.016829
+&gt;&gt;&gt; tf
+1458558487.020353
+&gt;&gt;&gt; dt
+0.0035240650177001953
+</code></pre>
+<p>L'exécution de la boucle a duré 0.0035240650177001953 secondes.</p>
+<h3><a id="user-content-mesurer-le-temps-dutilisation-processeur-ou-temps-cpu" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#mesurer-le-temps-dutilisation-processeur-ou-temps-cpu"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Mesurer le temps d'utilisation processeur ou temps CPU.</h3>
+<p>On mesure toujours le temps d'exécution de la boucle while, mais on utilise cette fois la fonction clock() qui est plus précise.</p>
+<pre><code>import time
+
+t0 = time.clock()
+
+x = 0
+while x &lt; 10000:
+	x = x + 1
+	
+tf = time.clock()
+dt = tf-t0
+</code></pre>
+<p>Résultats:</p>
+<pre><code>&gt;&gt;&gt; t0
+36.446733
+&gt;&gt;&gt; tf
+36.456447
+&gt;&gt;&gt; dt
+0.009713999999995337
+</code></pre>
+<h3><a id="user-content-convertir-un-localtime-ou-gmtime-en-timestamp" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#convertir-un-localtime-ou-gmtime-en-timestamp"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Convertir un localtime ou gmtime en timestamp.</h3>
+<p>Il faut pour cela utiliser la fonction mktime()</p>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; l = time.localtime()
+&gt;&gt;&gt; g = time.gmtime()
+
+&gt;&gt;&gt; l
+time.struct_time(tm_year=2016, tm_mon=3, tm_mday=21, tm_hour=18, tm_min=16, tm_sec=50, tm_wday=0, tm_yday=81, tm_isdst=0)
+
+&gt;&gt;&gt; g
+time.struct_time(tm_year=2016, tm_mon=3, tm_mday=21, tm_hour=18, tm_min=17, tm_sec=0, tm_wday=0, tm_yday=81, tm_isdst=0)
+
+&gt;&gt;&gt; time.mktime(l)
+1458584210.0
+
+&gt;&gt;&gt; time.mktime(g)
+1458584220.0
+</code></pre>
+<h3><a id="user-content-présenter-la-date-et-lheure-sous-forme-dune-chaîne-de-caractères-str" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#pr%C3%A9senter-la-date-et-lheure-sous-forme-dune-cha%C3%AEne-de-caract%C3%A8res-str"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Présenter la date et l'heure sous forme d'une chaîne de caractères (str).</h3>
+<p>On utilise pour cela la fonction asctime().</p>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; x = time.asctime()
+&gt;&gt;&gt; x
+'Mon Mar 21 18:56:25 2016'
+&gt;&gt;&gt; type(x)
+&lt;type 'str'&gt;
+</code></pre>
+<p>Ou en gmtime():</p>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; g = time.gmtime()
+&gt;&gt;&gt; x = time.asctime(g)
+&gt;&gt;&gt; x
+'Mon Mar 21 18:58:21 2016'
+</code></pre>
+<h3><a id="user-content-convertir-un-temps-présenté-sous-forme-dune-chaîne-de-caractères-en-tuple-struct_time" class="anchor" aria-hidden="true" href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa#convertir-un-temps-pr%C3%A9sent%C3%A9-sous-forme-dune-cha%C3%AEne-de-caract%C3%A8res-en-tuple-struct_time"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Convertir un temps présenté sous forme d'une chaîne de caractères en tuple struct_time.</h3>
+<p>On utilise pour cela la fonction strptime()</p>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; x = time.asctime()
+&gt;&gt;&gt; x
+'Tue Mar 22 14:37:23 2016'
+&gt;&gt;&gt; k = time.strptime(x)
+&gt;&gt;&gt; k
+time.struct_time(tm_year=2016, tm_mon=3, tm_mday=22, tm_hour=14, tm_min=37, tm_sec=23, tm_wday=1, tm_yday=82, tm_isdst=-1)
+</code></pre>
+<p>Pour convertir juste l'heure:</p>
+<pre><code>&gt;&gt;&gt; import time
+&gt;&gt;&gt; z = '12:32:45'
+&gt;&gt;&gt; j = time.strptime(z,'%H:%M:%S')
+&gt;&gt;&gt; j
+time.struct_time(tm_year=1900, tm_mon=1, tm_mday=1, tm_hour=12, tm_min=32, tm_sec=45, tm_wday=0, tm_yday=1, tm_isdst=-1)
+</code></pre>
+</article>
+  </div>
+
+  </div>
+</div>
+
+
+      <a name="comments"></a>
+      <div class="js-quote-selection-container" data-quote-markdown=".js-comment-body">
+        <div class="js-discussion ">
+          <div class="ml-md-6 pl-md-3 ml-0 pl-0">
+            
+
+<!-- Rendered timeline since 2018-01-22 11:43:49 -->
+<div id="partial-timeline-marker" class="js-timeline-marker js-updatable-content" data-last-modified="Mon, 22 Jan 2018 19:43:49 GMT">
+</div>
+
+          </div>
+
+          <div class="discussion-timeline-actions">
+              <div data-view-component="true" class="flash flash-warn mt-3">
+  
+  
+    <a rel="nofollow" class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;signed out comment&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="483e37e32373f765e1d1be0a33187522f6e116099aa6797df5bf4256b0a8a51a" href="https://gist.github.com/join?source=comment-gist">Sign up for free</a>
+    <strong>to join this conversation on GitHub</strong>.
+    Already have an account?
+    <a rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;signed out comment&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="877ddd3a0559d388aebebfaae8ef5714aa347c2c8956e7fdce93fc7591e05d07" href="https://gist.github.com/login?return_to=https%3A%2F%2Fgist.github.com%2FYannBouyeron%2F1083709633f78e6804602a7ac6ae4bfa">Sign in to comment</a>
+
+
+  
+</div>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+</div><!-- /.container -->
+
+    </main>
+  </div>
+
+  </div>
+
+            
+<div class="footer container-lg width-full p-responsive" role="contentinfo">
+  <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 color-fg-muted border-top color-border-muted ">
+    <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      <li class="mr-3 mr-lg-0">© 2021 GitHub, Inc.</li>
+        <li class="mr-3 mr-lg-0"><a href="https://docs.github.com/en/github/site-policy/github-terms-of-service" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to terms&quot;,&quot;label&quot;:&quot;text:terms&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="adb34a30ee88b6f610d466cb7f3fb07afe190d617afe5e70c07ffd073a61c1a1" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to terms&quot;,&quot;label&quot;:&quot;text:terms&quot;}">Terms</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://docs.github.com/en/github/site-policy/github-privacy-statement" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to privacy&quot;,&quot;label&quot;:&quot;text:privacy&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="4f6e926eee974f2519ef59b8079ac343bf56cb527f77b31763013b44e200a1b7" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to privacy&quot;,&quot;label&quot;:&quot;text:privacy&quot;}">Privacy</a></li>
+        <li class="mr-3 mr-lg-0"><a data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to security&quot;,&quot;label&quot;:&quot;text:security&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="b953e935d4466bff4744e882c73022dad87a93e4c957d96387e550051fd4ead3" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to security&quot;,&quot;label&quot;:&quot;text:security&quot;}" href="https://github.com/security">Security</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://www.githubstatus.com/" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to status&quot;,&quot;label&quot;:&quot;text:status&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="c5dec6f171e8425cf89234db283cd45a832c48746280a06486930238040b49dc" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to status&quot;,&quot;label&quot;:&quot;text:status&quot;}">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:Docs" href="https://docs.github.com/">Docs</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com/">
+      <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github">
+    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+</a>
+    <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        <li class="mr-3 mr-lg-0"><a href="https://support.github.com/?tags=dotcom-footer" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to contact&quot;,&quot;label&quot;:&quot;text:contact&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="87635429716e4e2fde754c49794cabd5c827fdaa94a00bef3c987cbfd234ceb8" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to contact&quot;,&quot;label&quot;:&quot;text:contact&quot;}">Contact GitHub</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://github.com/pricing" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to Pricing&quot;,&quot;label&quot;:&quot;text:Pricing&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a9d5d99ea37c775b1c2ab688b762b69f67746ac6e7e7af170d39818b9d3550b8" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to Pricing&quot;,&quot;label&quot;:&quot;text:Pricing&quot;}">Pricing</a></li>
+      <li class="mr-3 mr-lg-0"><a href="https://docs.github.com/" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to api&quot;,&quot;label&quot;:&quot;text:api&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="667fd3c980955a42e5a05095694fce09d18ce4d9ae50383d44062dd46f9d4d62" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to api&quot;,&quot;label&quot;:&quot;text:api&quot;}">API</a></li>
+      <li class="mr-3 mr-lg-0"><a href="https://services.github.com/" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to training&quot;,&quot;label&quot;:&quot;text:training&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="32245cb08bc224f0565499786880b364a3620e15c967a3b4b18c6b8fda67f852" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to training&quot;,&quot;label&quot;:&quot;text:training&quot;}">Training</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://github.blog/" data-hydro-click="{&quot;event_type&quot;:&quot;analytics.event&quot;,&quot;payload&quot;:{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to blog&quot;,&quot;label&quot;:&quot;text:blog&quot;,&quot;originating_url&quot;:&quot;https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="62b4764e91635f0275382b40d3cc041e4baa0f8982584616a313aca0197dac43" data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to blog&quot;,&quot;label&quot;:&quot;text:blog&quot;}">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 color-fg-muted"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error" hidden="">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path>
+</svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+  <div class="js-stale-session-flash flash flash-warn flash-banner" hidden="">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path>
+</svg>
+    <span class="js-stale-session-flash-signed-in" hidden="">You signed in with another tab or window. <a href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa">Reload</a> to refresh your session.</span>
+    <span class="js-stale-session-flash-signed-out" hidden="">You signed out in another tab or window. <a href="https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa">Reload</a> to refresh your session.</span>
+  </div>
+    <template id="site-details-dialog"></template>
+
+    <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box color-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+    <template id="snippet-clipboard-copy-button"></template>
+
+
+
+
+  
+
+
+<div aria-live="polite" class="sr-only"></div></body></html>

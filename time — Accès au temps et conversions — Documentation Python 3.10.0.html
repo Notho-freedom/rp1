@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://docs.python.org/fr/3/library/time.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time — Accès au temps et conversions — Documentation Python 3.10.0</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/pydoctheme.css" type="text/css">
+    <link rel="stylesheet" href="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/pygments.css" type="text/css">
+    
+    <script id="documentation_options" data-url_root="../" src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/documentation_options.js.téléchargement"></script>
+    <script src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/jquery.js.téléchargement"></script>
+    <script src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/underscore.js.téléchargement"></script>
+    <script src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/doctools.js.téléchargement"></script>
+    <script src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/language_data.js.téléchargement"></script>
+    <script src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/translations.js.téléchargement"></script>
+    
+    
+    <script src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/sidebar.js.téléchargement"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml" title="Recherchez dans Documentation Python 3.10.0" href="https://docs.python.org/fr/3/_static/opensearch.xml">
+    <link rel="author" title="À propos de ces documents" href="https://docs.python.org/fr/3/about.html">
+    <link rel="index" title="Index" href="https://docs.python.org/fr/3/genindex.html">
+    <link rel="search" title="Recherche" href="https://docs.python.org/fr/3/search.html">
+    <link rel="copyright" title="Copyright" href="https://docs.python.org/fr/3/copyright.html">
+    <link rel="next" title="argparse -- Parseur d&#39;arguments, d&#39;options, et de sous-commandes de ligne de commande" href="https://docs.python.org/fr/3/library/argparse.html">
+    <link rel="prev" title="io --- Core tools for working with streams" href="https://docs.python.org/fr/3/library/io.html">
+    <link rel="canonical" href="https://docs.python.org/3/library/time.html">
+    
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="shortcut icon" type="image/png" href="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/py.svg">
+            <script type="text/javascript" src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/copybutton.js.téléchargement"></script>
+            <script type="text/javascript" src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/menu.js.téléchargement"></script> 
+
+  <script type="text/javascript" async="" src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/MathJax.js.téléchargement"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation" aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <label for="menuToggler" class="toggler__label">
+        <span></span>
+    </label>
+    <nav class="nav-content" role="navigation">
+         <a href="https://www.python.org/" class="nav-logo">
+             <img src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/py.svg" alt="Logo">
+         </a>
+        <div class="version_switcher_placeholder"><select id="version_select"><option value="3.11">dev (3.11)</option><option value="3.10" selected="selected">3.10.0</option><option value="3.9">3.9</option><option value="3.8">3.8</option><option value="3.7">3.7</option><option value="3.6">3.6</option><option value="3.5">3.5</option><option value="2.7">2.7</option></select></div>
+        <form role="search" class="search" action="https://docs.python.org/fr/3/search.html" method="get">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                <path fill-rule="nonzero" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
+            </svg>
+            <input type="text" name="q" aria-label="Recherche rapide">
+            <input type="submit" value="Go">
+        </form>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation" tabindex="-1">
+            <div class="language_switcher_placeholder"><select id="language_select"><option value="en">English</option><option value="es">Spanish</option><option value="fr" selected="selected">French</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="pt-br">Brazilian Portuguese</option><option value="zh-cn">Simplified Chinese</option><option value="zh-tw">Traditional Chinese</option></select></div>
+  <h3><a href="https://docs.python.org/fr/3/contents.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> — Accès au temps et conversions</a><ul>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#functions">Fonctions</a></li>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#clock-id-constants">Constantes d’identification d’horloge</a></li>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#timezone-constants">Constantes de fuseau horaire</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="https://docs.python.org/fr/3/library/io.html" title="Chapitre précédent"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code> --- Core tools for working with streams</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="https://docs.python.org/fr/3/library/argparse.html" title="Chapitre suivant"><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code> -- Parseur d'arguments, d'options, et de sous-commandes de ligne de commande</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="https://docs.python.org/fr/3/bugs.html">Signalement de bogue</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/time.rst" rel="nofollow">Montrer le code source
+        </a>
+      </li>
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="https://docs.python.org/fr/3/genindex.html" title="Index général" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="https://docs.python.org/fr/3/py-modindex.html" title="Index des modules Python">modules</a> |</li>
+        <li class="right">
+          <a href="https://docs.python.org/fr/3/library/argparse.html" title="argparse -- Parseur d&#39;arguments, d&#39;options, et de sous-commandes de ligne de commande" accesskey="N">suivant</a> |</li>
+        <li class="right">
+          <a href="https://docs.python.org/fr/3/library/io.html" title="io --- Core tools for working with streams" accesskey="P">précédent</a> |</li>
+
+          <li><img src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> »</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"><select id="language_select"><option value="en">English</option><option value="es">Spanish</option><option value="fr" selected="selected">French</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="pt-br">Brazilian Portuguese</option><option value="zh-cn">Simplified Chinese</option><option value="zh-tw">Traditional Chinese</option></select></div>
+            <div class="version_switcher_placeholder"><select id="version_select"><option value="3.11">dev (3.11)</option><option value="3.10" selected="selected">3.10.0</option><option value="3.9">3.9</option><option value="3.8">3.8</option><option value="3.7">3.7</option><option value="3.6">3.6</option><option value="3.5">3.5</option><option value="2.7">2.7</option></select></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="https://docs.python.org/fr/3/index.html">3.10.0 Documentation</a> »
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="https://docs.python.org/fr/3/library/index.html">La bibliothèque standard</a> »</li>
+          <li class="nav-item nav-item-2"><a href="https://docs.python.org/fr/3/library/allos.html" accesskey="U">Services génériques du système d'exploitation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="https://docs.python.org/fr/3/library/time.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> — Accès au temps et conversions</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="https://docs.python.org/fr/3/search.html" method="get">
+          <input placeholder="Recherche rapide" aria-label="Recherche rapide" type="text" name="q">
+          <input type="submit" value="Go">
+          <input type="hidden" name="check_keywords" value="yes">
+          <input type="hidden" name="area" value="default">
+        </form>
+    </div>
+                     |
+                </li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-time">
+<span id="time-time-access-and-conversions"></span><h1><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#module-time" title="time: Time access and conversions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> — Accès au temps et conversions<a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#module-time" title="Lien permanent vers ce titre">¶</a></h1>
+<hr class="docutils">
+<p>Ce module fournit différentes fonctions liées au temps. Pour les fonctionnalités associées, voir aussi les modules <a class="reference internal" href="https://docs.python.org/fr/3/library/datetime.html#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/calendar.html#module-calendar" title="calendar: Functions for working with calendars, including some emulation of the Unix cal program."><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code></a>.</p>
+<p>Bien que ce module soit toujours disponible, toutes les fonctions ne sont pas disponibles sur toutes les plateformes. La plupart des fonctions définies dans ce module délèguent à des fonctions de même nom de la bibliothèque C. Il peut parfois être utile de consulter la documentation de la plate-forme, car la sémantique de ces fonctions peut varier.</p>
+<p>Vous trouvez ci-dessous, mises en ordre, quelques explications relative à la terminologie et aux conventions.</p>
+<span class="target" id="epoch"></span><ul class="simple" id="index-0">
+<li><p>L'<em class="dfn">epoch</em> est le point de départ du temps et dépend de la plate-forme. Pour Unix, <em>epoch</em> est le 1<sup>er</sup> janvier 1970 à 00:00:00 (UTC). Pour savoir comment est définie <em>epoch</em> sur une plate-forme donnée, regardez <code class="docutils literal notranslate"><span class="pre">time.gmtime(0)</span></code>.</p></li>
+</ul>
+<ul class="simple" id="index-1">
+<li><p>Le terme <em class="dfn">secondes depuis *epoch*</em> désigne le nombre total de secondes écoulées depuis <em>epoch</em>, souvent en excluant les secondes intercalaires (<a class="reference external" href="https://en.wikipedia.org/wiki/Leap_second">leap seconds</a>). Les secondes intercalaires sont exclues de ce total sur toutes les plates-formes conformes POSIX.</p></li>
+</ul>
+<ul class="simple" id="index-2">
+<li><p>Les fonctions de ce module peuvent ne pas gérer les dates et heures antérieures à <em>epoch</em> ou dans un avenir lointain. Le seuil du futur est déterminé par la bibliothèque C&nbsp;; pour les systèmes 32 bits, il s’agit généralement de 2038.</p></li>
+</ul>
+<ul class="simple" id="index-3">
+<li><p>La fonction <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="time.strptime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strptime()</span></code></a> peut analyser des années à 2 chiffres lorsque le format <code class="docutils literal notranslate"><span class="pre">%y</span></code> est spécifié. Lorsque les années à deux chiffres sont analysées, elles sont converties conformément aux normes POSIX et ISO C&nbsp;: les valeurs 69—99 correspondent à 1969—1999 et les valeurs 0—68 à 2000—2068.</p></li>
+</ul>
+<ul class="simple" id="index-4">
+<li><p>UTC désigne le temps universel coordonné (<em>Coordinated Universal Time</em> en anglais), anciennement l'heure de Greenwich (ou GMT). L'acronyme UTC n'est pas une erreur mais un compromis entre l'anglais et le français.</p></li>
+</ul>
+<ul id="index-5">
+<li><p>Le DST (<em>Daylight Saving Time</em>) correspond à l’heure d’été, un ajustement du fuseau horaire d’une heure (généralement) pendant une partie de l’année. Les règles de DST sont magiques (déterminées par la loi locale) et peuvent changer d’année en année. La bibliothèque C possède une table contenant les règles locales (souvent, elle est lue dans un fichier système par souci de souplesse) et constitue la seule source fiable.</p></li>
+<li><p>La précision des diverses fonctions en temps réel peut être inférieure à celle suggérée par les unités dans lesquelles leur valeur ou leur argument est exprimé. Par exemple, sur la plupart des systèmes Unix, l’horloge ne «&nbsp;bat&nbsp;» que 50 ou 100 fois par seconde.</p></li>
+<li><p>D’autre part, la précision de <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.sleep" title="time.sleep"><code class="xref py py-func docutils literal notranslate"><span class="pre">sleep()</span></code></a> est meilleure que leurs équivalents Unix&nbsp;: les temps sont exprimés en nombres à virgule flottante, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> renvoie le temps le plus précis disponible (en utilisant <code class="xref c c-func docutils literal notranslate"><span class="pre">gettimeofday()</span></code> d'Unix si elle est disponible), et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.sleep" title="time.sleep"><code class="xref py py-func docutils literal notranslate"><span class="pre">sleep()</span></code></a> accepte le temps avec une fraction non nulle (<code class="xref c c-func docutils literal notranslate"><span class="pre">select()</span></code> d'Unix est utilisée pour l’implémenter, si elle est disponible).</p></li>
+<li><p>La valeur temporelle renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a>, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="time.strptime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strptime()</span></code></a>, et acceptée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.asctime" title="time.asctime"><code class="xref py py-func docutils literal notranslate"><span class="pre">asctime()</span></code></a>, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.mktime" title="time.mktime"><code class="xref py py-func docutils literal notranslate"><span class="pre">mktime()</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strftime" title="time.strftime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strftime()</span></code></a>, est une séquence de 9 nombres entiers. Les valeurs de retour de <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a>, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="time.strptime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strptime()</span></code></a> proposent également des noms d’attributs pour des champs individuels.</p>
+<p>Voir <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> pour une description de ces objets.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Modifié dans la version 3.3: </span>Le type <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> a été étendu pour fournir les attributs <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_gmtoff</span></code> et <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_zone</span></code> lorsque la plateforme prend en charge les membres <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">tm</span></code> correspondants.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Modifié dans la version 3.6: </span>Les attributs <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_gmtoff</span></code> et <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_zone</span></code> sont maintenant disponibles sur toutes les plateformes.</p>
+</div>
+</li>
+<li><p>Utilisez les fonctions suivantes pour convertir des représentations temporelles&nbsp;:</p>
+<div class="responsive-table__container"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>De</p></th>
+<th class="head"><p>À</p></th>
+<th class="head"><p>Utilisez</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>secondes depuis <em>epoch</em></p></td>
+<td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> en UTC</p></td>
+<td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>secondes depuis <em>epoch</em></p></td>
+<td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> en heure locale</p></td>
+<td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> en UTC</p></td>
+<td><p>secondes depuis <em>epoch</em></p></td>
+<td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/calendar.html#calendar.timegm" title="calendar.timegm"><code class="xref py py-func docutils literal notranslate"><span class="pre">calendar.timegm()</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> en heure locale</p></td>
+<td><p>secondes depuis <em>epoch</em></p></td>
+<td><p><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.mktime" title="time.mktime"><code class="xref py py-func docutils literal notranslate"><span class="pre">mktime()</span></code></a></p></td>
+</tr>
+</tbody>
+</table></div>
+</li>
+</ul>
+<div class="section" id="functions">
+<span id="time-functions"></span><h2>Fonctions<a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#functions" title="Lien permanent vers ce titre">¶</a></h2>
+<dl class="py function">
+<dt id="time.asctime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">asctime</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">t</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.asctime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Convertit un <em>n</em>-uplet ou <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> représentant une heure renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> ou <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> en une chaîne de la forme suivante&nbsp;: <code class="docutils literal notranslate"><span class="pre">'Sun</span> <span class="pre">Jun</span> <span class="pre">20</span> <span class="pre">23:21:05</span> <span class="pre">1993'</span></code>. Le numéro du jour est un champ de deux caractères complété par une espace si celui-ci n'a qu'un seul chiffre, par exemple&nbsp;: <code class="docutils literal notranslate"><span class="pre">'Wed</span> <span class="pre">Jun</span>&nbsp; <span class="pre">9</span> <span class="pre">04:26:40</span> <span class="pre">1993'</span></code>.</p>
+<p>Si <em>t</em> n’est pas fourni, l’heure actuelle renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> est utilisée. Les informations sur les paramètres régionaux ne sont pas utilisées par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.asctime" title="time.asctime"><code class="xref py py-func docutils literal notranslate"><span class="pre">asctime()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Contrairement à la fonction C du même nom, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.asctime" title="time.asctime"><code class="xref py py-func docutils literal notranslate"><span class="pre">asctime()</span></code></a> n’ajoute pas de caractère de fin de ligne.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.pthread_getcpuclockid">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">pthread_getcpuclockid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thread_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.pthread_getcpuclockid" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Renvoie le <em>clk_id</em> de l'horloge du temps CPU spécifique au fil d'exécution pour le <em>thread_id</em> spécifié.</p>
+<p>Utilisez <a class="reference internal" href="https://docs.python.org/fr/3/library/threading.html#threading.get_ident" title="threading.get_ident"><code class="xref py py-func docutils literal notranslate"><span class="pre">threading.get_ident()</span></code></a> ou l'attribut <a class="reference internal" href="https://docs.python.org/fr/3/library/threading.html#threading.Thread.ident" title="threading.Thread.ident"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ident</span></code></a> de <a class="reference internal" href="https://docs.python.org/fr/3/library/threading.html#threading.Thread" title="threading.Thread"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></a> pour obtenir une valeur appropriée pour <em>thread_id</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Passer un <em>thread_id</em> invalide ou arrivé à expiration peut entraîner un comportement indéfini, tel qu’une erreur de segmentation.</p>
+</div>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix (regardez la page man pour <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/pthread_getcpuclockid(3)">pthread_getcpuclockid(3)</a></em> pour plus d’information).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.clock_getres">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">clock_getres</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clk_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.clock_getres" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Renvoie la résolution (précision) de l’horloge <em>clk_id</em>. Référez-vous à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time-clock-id-constants"><span class="std std-ref">Constantes d’identification d’horloge</span></a> pour une liste des valeurs acceptées pour <em>clk_id</em>.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.clock_gettime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">clock_gettime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clk_id</span></em><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float">float</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.clock_gettime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Renvoie l’heure de l’horloge <em>clk_id</em>. Référez-vous à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time-clock-id-constants"><span class="std std-ref">Constantes d’identification d’horloge</span></a> pour une liste des valeurs acceptées pour <em>clk_id</em>.</p>
+<p>Use <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.clock_gettime_ns" title="time.clock_gettime_ns"><code class="xref py py-func docutils literal notranslate"><span class="pre">clock_gettime_ns()</span></code></a> to avoid the precision loss caused by the
+<a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.clock_gettime_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">clock_gettime_ns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clk_id</span></em><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#int" title="int">int</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.clock_gettime_ns" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.clock_gettime" title="time.clock_gettime"><code class="xref py py-func docutils literal notranslate"><span class="pre">clock_gettime()</span></code></a> mais le temps renvoyé est exprimé en nanosecondes.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.clock_settime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">clock_settime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clk_id</span></em>, <em class="sig-param"><span class="n">time</span><span class="p">:</span> <span class="n"><a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float">float</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.clock_settime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Définit l’heure de l’horloge <em>clk_id</em>. Actuellement, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_REALTIME" title="time.CLOCK_REALTIME"><code class="xref py py-data docutils literal notranslate"><span class="pre">CLOCK_REALTIME</span></code></a> est la seule valeur acceptée pour <em>clk_id</em>.</p>
+<p>Use <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.clock_settime_ns" title="time.clock_settime_ns"><code class="xref py py-func docutils literal notranslate"><span class="pre">clock_settime_ns()</span></code></a> to avoid the precision loss caused by the
+<a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.clock_settime_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">clock_settime_ns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clk_id</span></em>, <em class="sig-param"><span class="n">time</span><span class="p">:</span> <span class="n"><a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#int" title="int">int</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.clock_settime_ns" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.clock_settime" title="time.clock_settime"><code class="xref py py-func docutils literal notranslate"><span class="pre">clock_settime()</span></code></a> mais définit l’heure avec des nanosecondes.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.ctime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">ctime</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">secs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.ctime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Convertit une heure exprimée en secondes depuis <em>epoch</em> en une chaîne représentant l’heure locale, sous la forme suivante&nbsp;: <code class="docutils literal notranslate"><span class="pre">'Sun</span> <span class="pre">Jun</span> <span class="pre">20</span> <span class="pre">23:21:05</span> <span class="pre">1993'</span></code>. Le numéro du jour est un champ de deux caractères complété par une espace si celui-ci n'a qu'un seul chiffre, par exemple&nbsp;: <code class="docutils literal notranslate"><span class="pre">'Wed</span> <span class="pre">Jun</span>&nbsp; <span class="pre">9</span> <span class="pre">04:26:40</span> <span class="pre">1993'</span></code>.</p>
+<p>Si <em>secs</em> n’est pas fourni ou vaut <a class="reference internal" href="https://docs.python.org/fr/3/library/constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a>, l’heure actuelle renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> est utilisée. <code class="docutils literal notranslate"><span class="pre">ctime(secs)</span></code> est équivalent à <code class="docutils literal notranslate"><span class="pre">asctime(localtime(secs))</span></code>. Les informations sur les paramètres régionaux ne sont pas utilisées par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.ctime" title="time.ctime"><code class="xref py py-func docutils literal notranslate"><span class="pre">ctime()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.get_clock_info">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">get_clock_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.get_clock_info" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Renvoie des informations sur l’horloge spécifiée en tant qu’objet d’espace de nom. Les noms d’horloge pris en charge et les fonctions correspondantes permettant de lire leur valeur sont les suivants&nbsp;:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'monotonic'</span></code>&nbsp;: <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.monotonic" title="time.monotonic"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.monotonic()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'perf_counter'</span></code>&nbsp;: <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.perf_counter" title="time.perf_counter"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.perf_counter()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'process_time'</span></code>&nbsp;: <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.process_time" title="time.process_time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.process_time()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'thread_time'</span></code>&nbsp;: <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.thread_time" title="time.thread_time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.thread_time()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'time'</span></code>&nbsp;: <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.time()</span></code></a></p></li>
+</ul>
+<p>Le résultat a les attributs suivants&nbsp;:</p>
+<ul class="simple">
+<li><p><em>adjustable</em>&nbsp;: <code class="docutils literal notranslate"><span class="pre">True</span></code> si l’horloge peut être changée automatiquement (par exemple par un démon NTP) ou manuellement par l’administrateur système, <code class="docutils literal notranslate"><span class="pre">False</span></code> autrement</p></li>
+<li><p><em>implementation</em>&nbsp;: nom de la fonction C sous-jacente utilisée pour obtenir la valeur d’horloge. Voir <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time-clock-id-constants"><span class="std std-ref">Constantes d’identification d’horloge</span></a> pour les valeurs possibles.</p></li>
+<li><p><em>monotonic</em>&nbsp;: <code class="docutils literal notranslate"><span class="pre">True</span></code> si l’horloge ne peut pas revenir en arrière, <code class="docutils literal notranslate"><span class="pre">False</span></code> autrement</p></li>
+<li><p><em>resolution</em>&nbsp;: La résolution de l’horloge en secondes (<a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.gmtime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">gmtime</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">secs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Convertit un temps exprimé en secondes depuis <em>epoch</em> en un <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> au format UTC dans lequel le drapeau <em>dst</em> est toujours égal à zéro. Si <em>secs</em> n’est pas fourni ou vaut <a class="reference internal" href="https://docs.python.org/fr/3/library/constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a>, l’heure actuelle renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> est utilisée. Les fractions de seconde sont ignorées. Voir ci-dessus pour une description de l’objet <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a>. Voir <a class="reference internal" href="https://docs.python.org/fr/3/library/calendar.html#calendar.timegm" title="calendar.timegm"><code class="xref py py-func docutils literal notranslate"><span class="pre">calendar.timegm()</span></code></a> pour l’inverse de cette fonction.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.localtime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">localtime</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">secs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Comme <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> mais convertit le résultat en heure locale. Si <em>secs</em> n’est pas fourni ou vaut <a class="reference internal" href="https://docs.python.org/fr/3/library/constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a>, l’heure actuelle renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> est utilisée. Le drapeau <em>dst</em> est mis à <code class="docutils literal notranslate"><span class="pre">1</span></code> lorsque l’heure d’été s’applique à l’heure indiquée.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.mktime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">mktime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.mktime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>C’est la fonction inverse de <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a>. Son argument est soit un <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> soit un 9-uplet (puisque le drapeau <em>dst</em> est nécessaire&nbsp;; utilisez <code class="docutils literal notranslate"><span class="pre">-1</span></code> comme drapeau <em>dst</em> s’il est inconnu) qui exprime le temps <strong>local</strong>, pas UTC. Il retourne un nombre à virgule flottante, pour compatibilité avec <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a>. Si la valeur d’entrée ne peut pas être représentée comme une heure valide, soit <a class="reference internal" href="https://docs.python.org/fr/3/library/exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> ou <a class="reference internal" href="https://docs.python.org/fr/3/library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> sera levée (selon que la valeur non valide est interceptée par Python ou par les bibliothèques C sous-jacentes). La date la plus proche pour laquelle il peut générer une heure dépend de la plate-forme.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.monotonic">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">monotonic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float">float</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.monotonic" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return the value (in fractional seconds) of a monotonic clock, i.e. a clock
+that cannot go backwards.  The clock is not affected by system clock updates.
+The reference point of the returned value is undefined, so that only the
+difference between the results of two calls is valid.</p>
+<p>Use <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.monotonic_ns" title="time.monotonic_ns"><code class="xref py py-func docutils literal notranslate"><span class="pre">monotonic_ns()</span></code></a> to avoid the precision loss caused by the
+<a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Modifié dans la version 3.5: </span>La fonction est maintenant toujours disponible et toujours à l’échelle du système.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Modifié dans la version 3.10: </span>On macOS, the function is now system-wide.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.monotonic_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">monotonic_ns</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#int" title="int">int</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.monotonic_ns" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <code class="xref py py-func docutils literal notranslate"><span class="pre">monotonique()</span></code>, mais le temps de retour est exprimé en nanosecondes.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.perf_counter">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">perf_counter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float">float</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.perf_counter" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p id="index-6">Return the value (in fractional seconds) of a performance counter, i.e. a
+clock with the highest available resolution to measure a short duration.  It
+does include time elapsed during sleep and is system-wide.  The reference
+point of the returned value is undefined, so that only the difference between
+the results of two calls is valid.</p>
+<p>Use <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.perf_counter_ns" title="time.perf_counter_ns"><code class="xref py py-func docutils literal notranslate"><span class="pre">perf_counter_ns()</span></code></a> to avoid the precision loss caused by the
+<a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Modifié dans la version 3.10: </span>On Windows, the function is now system-wide.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.perf_counter_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">perf_counter_ns</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#int" title="int">int</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.perf_counter_ns" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.perf_counter" title="time.perf_counter"><code class="xref py py-func docutils literal notranslate"><span class="pre">perf_counter()</span></code></a>, mais renvoie le temps en nanosecondes.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.process_time">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">process_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float">float</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.process_time" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p id="index-7">Return the value (in fractional seconds) of the sum of the system and user
+CPU time of the current process.  It does not include time elapsed during
+sleep.  It is process-wide by definition.  The reference point of the
+returned value is undefined, so that only the difference between the results
+of two calls is valid.</p>
+<p>Use <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.process_time_ns" title="time.process_time_ns"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_time_ns()</span></code></a> to avoid the precision loss caused by the
+<a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.process_time_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">process_time_ns</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#int" title="int">int</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.process_time_ns" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.process_time" title="time.process_time"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_time()</span></code></a> mais renvoie le temps en nanosecondes.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.sleep">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">sleep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.sleep" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Suspend l’exécution du fil d'exécution appelant pendant le nombre de secondes indiqué. L’argument peut être un nombre à virgule flottante pour indiquer un temps de sommeil plus précis. Le temps de suspension réel peut être inférieur à celui demandé, car tout signal capturé mettra fin à la commande <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.sleep" title="time.sleep"><code class="xref py py-func docutils literal notranslate"><span class="pre">sleep()</span></code></a> après l’exécution de la routine de capture de ce signal. En outre, le temps de suspension peut être plus long que celui demandé par un montant arbitraire en raison de la planification d’une autre activité dans le système.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Modifié dans la version 3.5: </span>La fonction dort maintenant au moins <em>secondes</em> même si le sommeil est interrompu par un signal, sauf si le gestionnaire de signaux lève une exception (voir <span class="target" id="index-35"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0475"><strong>PEP 475</strong></a> pour la justification).</p>
+</div>
+</dd></dl>
+
+<span class="target" id="index-9"></span><dl class="py function">
+<dt id="time.strftime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">strftime</code><span class="sig-paren">(</span><em class="sig-param">format</em><span class="optional">[</span>, <em class="sig-param">t</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.strftime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Convertit un <em>n</em>-uplet ou <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> représentant une heure renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> ou <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> en une chaîne spécifiée par l’argument <em>format</em>. Si <em>t</em> n’est pas fourni, l’heure actuelle renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> est utilisée. <em>format</em> doit être une chaîne. Si l’un des champs de <em>t</em> se situe en dehors de la plage autorisée, une <a class="reference internal" href="https://docs.python.org/fr/3/library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> est levée .</p>
+<p>0 est un argument légal pour toute position dans le <em>n</em>-uplet temporel&nbsp;; s’il est normalement illégal, la valeur est forcée à une valeur correcte.</p>
+<p>Les directives suivantes peuvent être incorporées dans la chaîne <em>format</em>. Ils sont affichés sans la spécification facultative de largeur de champ ni de précision, et sont remplacés par les caractères indiqués dans le résultat de <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strftime" title="time.strftime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strftime()</span></code></a>&nbsp;:</p>
+<div class="responsive-table__container"><table class="docutils align-default">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 73%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Directive</p></th>
+<th class="head"><p>Signification</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%a</span></code></p></td>
+<td><p>Nom abrégé du jour de la semaine selon les paramètres régionaux.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%A</span></code></p></td>
+<td><p>Le nom de semaine complet de la région.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%b</span></code></p></td>
+<td><p>Nom abrégé du mois de la région.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%B</span></code></p></td>
+<td><p>Nom complet du mois de la région.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%c</span></code></p></td>
+<td><p>Représentation appropriée de la date et de l’heure selon les paramètres régionaux.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%d</span></code></p></td>
+<td><p>Jour du mois sous forme décimale [01,31].</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%H</span></code></p></td>
+<td><p>Heure (horloge sur 24&nbsp;heures) sous forme de nombre décimal [00,23].</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%I</span></code></p></td>
+<td><p>Heure (horloge sur 12&nbsp;heures) sous forme de nombre décimal [01,12].</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%j</span></code></p></td>
+<td><p>Jour de l’année sous forme de nombre décimal [001,366].</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%m</span></code></p></td>
+<td><p>Mois sous forme décimale [01,12].</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%M</span></code></p></td>
+<td><p>Minutes sous forme décimale [00,59].</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%p</span></code></p></td>
+<td><p>L’équivalent local de AM ou PM.</p></td>
+<td><p>(1)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%S</span></code></p></td>
+<td><p>Secondes sous forme de nombre décimal [00,61].</p></td>
+<td><p>(2)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%U</span></code></p></td>
+<td><p>Numéro de semaine de l’année (dimanche en tant que premier jour de la semaine) sous forme décimale [00,53]. Tous les jours d’une nouvelle année précédant le premier dimanche sont considérés comme appartenant à la semaine 0.</p></td>
+<td><p>(3)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%w</span></code></p></td>
+<td><p>Jour de la semaine sous forme de nombre décimal [0 (dimanche), 6].</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%W</span></code></p></td>
+<td><p>Numéro de semaine de l’année (lundi comme premier jour de la semaine) sous forme décimale [00,53]. Tous les jours d’une nouvelle année précédant le premier lundi sont considérés comme appartenant à la semaine 0.</p></td>
+<td><p>(3)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%x</span></code></p></td>
+<td><p>Représentation de la date appropriée par les paramètres régionaux.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%X</span></code></p></td>
+<td><p>Représentation locale de l'heure.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%y</span></code></p></td>
+<td><p>Année sans siècle comme un nombre décimal [00, 99].</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%Y</span></code></p></td>
+<td><p>Année complète sur quatre chiffres.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%z</span></code></p></td>
+<td><p>Décalage de fuseau horaire indiquant une différence de temps positive ou négative par rapport à UTC / GMT de la forme <em>+HHMM</em> ou <em>-HHMM</em>, où H représente les chiffres des heures décimales et M, les chiffres des minutes décimales [<em>-23:59</em>, <em>+23:59</em>].</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%Z</span></code></p></td>
+<td><p>Nom du fuseau horaire (pas de caractères s’il n’y a pas de fuseau horaire).</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%%</span></code></p></td>
+<td><p>Un caractère <code class="docutils literal notranslate"><span class="pre">'%'</span></code> littéral.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Notes&nbsp;:</p>
+<ol class="arabic simple">
+<li><p>Lorsqu’elle est utilisée avec la fonction <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="time.strptime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strptime()</span></code></a>, la directive <code class="docutils literal notranslate"><span class="pre">%p</span></code> n’affecte le champ d’heure en sortie que si la directive <code class="docutils literal notranslate"><span class="pre">%I</span></code> est utilisée pour analyser l’heure.</p></li>
+<li><p>La plage est en réalité de <code class="docutils literal notranslate"><span class="pre">0</span></code> à <code class="docutils literal notranslate"><span class="pre">61</span></code>&nbsp;; la valeur <code class="docutils literal notranslate"><span class="pre">60</span></code> est valide dans les <em>timestamps</em> représentant des secondes intercalaires (<a class="reference external" href="https://en.wikipedia.org/wiki/Leap_second">leap seconds</a>) et la valeur <code class="docutils literal notranslate"><span class="pre">61</span></code> est prise en charge pour des raisons historiques.</p></li>
+<li><p>Lorsqu’elles sont utilisées avec la fonction <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="time.strptime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strptime()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">%U</span></code> et <code class="docutils literal notranslate"><span class="pre">%W</span></code> ne sont utilisées que dans les calculs lorsque le jour de la semaine et l’année sont spécifiés.</p></li>
+</ol>
+<p>Voici un exemple de format de date compatible avec celui spécifié dans la norme de courrier électronique Internet suivante <span class="target" id="index-36"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a>. <a class="footnote-reference brackets" href="https://docs.python.org/fr/3/library/time.html#id2" id="id1">1</a></p>
+<div class="highlight-python3 notranslate" style="position: relative;"><div class="highlight"><span class="copybutton" title="Hide the prompts and output" style="cursor: pointer; position: absolute; top: 0px; right: 0px; border-color: rgb(170, 204, 153); border-style: solid; border-width: 1px; color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; padding-right: 0.2em; border-radius: 0px 3px 0px 0px;">&gt;&gt;&gt;</span><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">gmtime</span><span class="p">,</span> <span class="n">strftime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">strftime</span><span class="p">(</span><span class="s2">"</span><span class="si">%a</span><span class="s2">, </span><span class="si">%d</span><span class="s2"> %b %Y %H:%M:%S +0000"</span><span class="p">,</span> <span class="n">gmtime</span><span class="p">())</span>
+<span class="go">'Thu, 28 Jun 2001 14:17:15 +0000'</span>
+</pre></div>
+</div>
+<p>Des directives supplémentaires peuvent être prises en charge sur certaines plates-formes, mais seules celles énumérées ici ont une signification normalisée par ANSI C. Pour voir la liste complète des codes de format pris en charge sur votre plate-forme, consultez la documentation <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/strftime(3)">strftime(3)</a></em>.</p>
+<p>Sur certaines plates-formes, une spécification facultative de largeur et de précision de champ peut suivre immédiatement le <code class="docutils literal notranslate"><span class="pre">'%'</span></code> initial d’une directive dans l’ordre suivant&nbsp;; ce n’est pas non plus portable. La largeur du champ est normalement 2 sauf pour <code class="docutils literal notranslate"><span class="pre">%j</span></code> où il est 3.</p>
+</dd></dl>
+
+<span class="target" id="index-11"></span><dl class="py function">
+<dt id="time.strptime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">strptime</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="optional">[</span>, <em class="sig-param">format</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Analyse une chaîne représentant une heure selon un format. La valeur renvoyée est une <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> tel que renvoyé par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> ou <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a>.</p>
+<p>Le paramètre <em>format</em> utilise les mêmes directives que celles utilisées par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strftime" title="time.strftime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strftime()</span></code></a>&nbsp;; la valeur par défaut est <code class="docutils literal notranslate"><span class="pre">"%a</span> <span class="pre">%b</span> <span class="pre">%d</span> <span class="pre">%H:%M:%S</span> <span class="pre">%Y"</span></code> qui correspond à la mise en forme renvoyée par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.ctime" title="time.ctime"><code class="xref py py-func docutils literal notranslate"><span class="pre">ctime()</span></code></a>. Si <em>string</em> ne peut pas être analysé selon <em>format</em>, ou s’il contient trop de données après l’analyse, une exception <a class="reference internal" href="https://docs.python.org/fr/3/library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> est levée. Les valeurs par défaut utilisées pour renseigner les données manquantes lorsque des valeurs plus précises ne peuvent pas être inférées sont <code class="docutils literal notranslate"><span class="pre">(1900,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">-1)</span></code>. <em>string</em> et <em>format</em> doivent être des chaînes.</p>
+<p>Par exemple&nbsp;:</p>
+<div class="doctest highlight-default notranslate" style="position: relative;"><div class="highlight"><span class="copybutton" title="Hide the prompts and output" style="cursor: pointer; position: absolute; top: 0px; right: 0px; border-color: rgb(170, 204, 153); border-style: solid; border-width: 1px; color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; padding-right: 0.2em; border-radius: 0px 3px 0px 0px;">&gt;&gt;&gt;</span><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">"30 Nov 00"</span><span class="p">,</span> <span class="s2">"</span><span class="si">%d</span><span class="s2"> %b %y"</span><span class="p">)</span>   
+<span class="go">time.struct_time(tm_year=2000, tm_mon=11, tm_mday=30, tm_hour=0, tm_min=0,</span>
+<span class="go">                 tm_sec=0, tm_wday=3, tm_yday=335, tm_isdst=-1)</span>
+</pre></div>
+</div>
+<p>La prise en charge de la directive <code class="docutils literal notranslate"><span class="pre">%Z</span></code> est basée sur les valeurs contenues dans <code class="docutils literal notranslate"><span class="pre">tzname</span></code> et sur le fait de savoir si <code class="docutils literal notranslate"><span class="pre">daylight</span></code> est vrai. Pour cette raison, il est spécifique à la plate-forme, à l’exception de la reconnaissance des heures UTC et GMT, qui sont toujours connues (et considérées comme des fuseaux horaires ne respectant pas l’heure d’été).</p>
+<p>Seules les directives spécifiées dans la documentation sont prises en charge. Parce que <code class="docutils literal notranslate"><span class="pre">strftime()</span></code> peut être implémenté différemment sur chaque plate-forme, il peut parfois offrir plus de directives que celles listées. Mais <code class="docutils literal notranslate"><span class="pre">strptime()</span></code> est indépendant de toute plate-forme et ne supporte donc pas nécessairement toutes les directives disponibles qui ne sont pas documentées comme gérées.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="time.struct_time">
+<em class="property">class </em><code class="sig-prename descclassname">time.</code><code class="sig-name descname">struct_time</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Le type de la séquence de valeur temporelle renvoyé par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a>, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="time.strptime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strptime()</span></code></a>. Semblable à un <a class="reference internal" href="https://docs.python.org/fr/3/glossary.html#term-named-tuple"><span class="xref std std-term">named tuple</span></a>&nbsp;: ses valeurs sont accessibles par index et par nom d’attribut. Les valeurs suivantes sont présentes&nbsp;:</p>
+<div class="responsive-table__container"><table class="docutils align-default">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 32%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>Attribut</p></th>
+<th class="head"><p>Valeurs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_year</span></code></p></td>
+<td><p>(par exemple, 1993)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_mon</span></code></p></td>
+<td><p>plage [1, 12]</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_mday</span></code></p></td>
+<td><p>plage [1, 31]</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_hour</span></code></p></td>
+<td><p>plage [0, 23]</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_min</span></code></p></td>
+<td><p>plage [0, 59]</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_sec</span></code></p></td>
+<td><p>plage [0, 61]; voir <strong>(2)</strong> dans la description <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strftime" title="time.strftime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strftime()</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_wday</span></code></p></td>
+<td><p>plage [0, 6], lundi valant 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_yday</span></code></p></td>
+<td><p>plage [1, 366]</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_isdst</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">-1</span></code>&nbsp;; voir en bas</p></td>
+</tr>
+<tr class="row-odd"><td><p>N/A</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_zone</span></code></p></td>
+<td><p>abréviation du nom du fuseau horaire</p></td>
+</tr>
+<tr class="row-even"><td><p>N/A</p></td>
+<td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_gmtoff</span></code></p></td>
+<td><p>décalage à l’est de UTC en secondes</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>Notez que contrairement à la structure C, la valeur du mois est une plage de [1, 12], pas de [0, 11].</p>
+<p>Dans les appels à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.mktime" title="time.mktime"><code class="xref py py-func docutils literal notranslate"><span class="pre">mktime()</span></code></a>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_isdst</span></code> peut être défini sur 1 lorsque l’heure d'été est en vigueur et sur 0 lorsque ce n’est pas le cas. Une valeur de <code class="docutils literal notranslate"><span class="pre">-1</span></code> indique que cela n’est pas connu et entraînera généralement le remplissage de l’état correct.</p>
+<p>Lorsqu’un <em>n</em>-uplet de longueur incorrecte est passé à une fonction acceptant une <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a>, ou comportant des éléments de type incorrect, une exception <a class="reference internal" href="https://docs.python.org/fr/3/library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> est levé.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.time">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float">float</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.time" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Renvoie le temps en secondes depuis <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#epoch">epoch</a> sous forme de nombre à virgule flottante. La date spécifique de <em>epoch</em> et le traitement des secondes intercalaires (<a class="reference external" href="https://en.wikipedia.org/wiki/Leap_second">leap seconds</a>) dépendent de la plate-forme. Sous Windows et la plupart des systèmes Unix, <em>epoch</em> est le 1<sup>er</sup> janvier 1970, 00:00:00 (UTC) et les secondes intercalaires ne sont pas comptées dans le temps en secondes depuis <em>epoch</em>. Ceci est communément appelé <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">Heure Unix</a>. Pour savoir quelle est <em>epoch</em> sur une plate-forme donnée, consultez <code class="docutils literal notranslate"><span class="pre">gmtime(0)</span></code>.</p>
+<p>Notez que même si l’heure est toujours renvoyée sous forme de nombre à virgule flottante, tous les systèmes ne fournissent pas l’heure avec une précision supérieure à 1 seconde. Bien que cette fonction renvoie normalement des valeurs croissantes, elle peut renvoyer une valeur inférieure à celle d’un appel précédent si l’horloge système a été réglée entre les deux appels.</p>
+<p>Le nombre renvoyé par <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> peut être converti en un format d’heure plus courant (année, mois, jour, heure, etc.) en UTC en le transmettant à la fonction <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> ou dans heure locale en le transmettant à la fonction <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a>. Dans les deux cas, un objet <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.struct_time" title="time.struct_time"><code class="xref py py-class docutils literal notranslate"><span class="pre">struct_time</span></code></a> est renvoyé, à partir duquel les composants de la date du calendrier peuvent être consultés en tant qu’attributs.</p>
+<p>Use <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time_ns" title="time.time_ns"><code class="xref py py-func docutils literal notranslate"><span class="pre">time_ns()</span></code></a> to avoid the precision loss caused by the <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>
+type.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.time_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">time_ns</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#int" title="int">int</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.time_ns" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> mais renvoie le nombre de nanosecondes depuis <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#epoch">epoch</a> sous la forme d'un entier.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.thread_time">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">thread_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float">float</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.thread_time" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p id="index-12">Return the value (in fractional seconds) of the sum of the system and user
+CPU time of the current thread.  It does not include time elapsed during
+sleep.  It is thread-specific by definition.  The reference point of the
+returned value is undefined, so that only the difference between the results
+of two calls in the same thread is valid.</p>
+<p>Use <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.thread_time_ns" title="time.thread_time_ns"><code class="xref py py-func docutils literal notranslate"><span class="pre">thread_time_ns()</span></code></a> to avoid the precision loss caused by the
+<a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Systèmes Windows, Linux, Unix prenant en charge <code class="docutils literal notranslate"><span class="pre">CLOCK_THREAD_CPUTIME_ID</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.thread_time_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">thread_time_ns</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → <a class="reference internal" href="https://docs.python.org/fr/3/library/functions.html#int" title="int">int</a><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.thread_time_ns" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.thread_time" title="time.thread_time"><code class="xref py py-func docutils literal notranslate"><span class="pre">thread_time()</span></code></a> mais renvoie le temps en nanosecondes.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="time.tzset">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">tzset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.tzset" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Réinitialise les règles de conversion de temps utilisées par les routines de la bibliothèque. La variable d’environnement <span class="target" id="index-37"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">TZ</span></code> spécifie comment cela est effectué. La fonction définira également les variables <code class="docutils literal notranslate"><span class="pre">tzname</span></code> (à partir de la variable d’environnement <span class="target" id="index-38"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">TZ</span></code>), <code class="docutils literal notranslate"><span class="pre">timezone</span></code> (secondes non DST à l’ouest de l’UTC), <code class="docutils literal notranslate"><span class="pre">altzone</span></code> (secondes DST à l’ouest de UTC) et <code class="docutils literal notranslate"><span class="pre">daylight</span></code> (à 0 si ce fuseau horaire ne comporte aucune règle d’heure d’été, ou non nul s’il existe une heure, passée, présente ou future lorsque l’heure d’été est appliquée).</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bien que dans de nombreux cas, la modification de la variable d’environnement <span class="target" id="index-39"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">TZ</span></code> puisse affecter la sortie de fonctions telles que <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> sans appeler <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.tzset" title="time.tzset"><code class="xref py py-func docutils literal notranslate"><span class="pre">tzset()</span></code></a>, ce comportement n'est pas garanti.</p>
+<p>La variable d’environnement <span class="target" id="index-40"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">TZ</span></code> ne doit contenir aucun espace.</p>
+</div>
+<p>Le format standard de la variable d’environnement <span class="target" id="index-41"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">TZ</span></code> est (espaces ajoutés pour plus de clarté)&nbsp;:</p>
+<div class="highlight-python3 notranslate" style="position: relative;"><div class="highlight"><pre><span></span><span class="n">std</span> <span class="n">offset</span> <span class="p">[</span><span class="n">dst</span> <span class="p">[</span><span class="n">offset</span> <span class="p">[,</span><span class="n">start</span><span class="p">[</span><span class="o">/</span><span class="n">time</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="o">/</span><span class="n">time</span><span class="p">]]]]</span>
+</pre></div>
+</div>
+<p>Où les composants sont&nbsp;:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">std</span></code> et <code class="docutils literal notranslate"><span class="pre">dst</span></code></dt><dd><p>Trois alphanumériques ou plus donnant les abréviations du fuseau horaire. Ceux-ci seront propagés dans <em>time.tzname</em></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">offset</span></code></dt><dd><p>Le décalage a la forme suivante&nbsp;: <code class="docutils literal notranslate"><span class="pre">±</span> <span class="pre">hh[:mm[:ss]]</span></code>. Cela indique la valeur ajoutée à l’heure locale pour arriver à UTC. S'il est précédé d’un <code class="docutils literal notranslate"><span class="pre">'-'</span></code>, le fuseau horaire est à l’est du Premier Méridien&nbsp;; sinon, c’est l’ouest. Si aucun décalage ne suit <em>dst</em>, l’heure d’été est supposée être en avance d’une heure sur l’heure standard.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">start[/time],</span> <span class="pre">end[/time]</span></code></dt><dd><p>Indique quand passer à DST et en revenir. Le format des dates de début et de fin est l’un des suivants&nbsp;:</p>
+<dl class="simple">
+<dt><code class="samp docutils literal notranslate"><span class="pre">J</span><em><span class="pre">n</span></em></code></dt><dd><p>Le jour Julien <em>n</em> (1 &lt;= <em>n</em> &lt;= 365). Les jours bissextiles ne sont pas comptabilisés. Par conséquent, le 28 février est le 59<sup>e</sup> jour et le 1<sup>er</sup> mars est le 60<sup>e</sup> jour de toutes les années.</p>
+</dd>
+<dt><code class="samp docutils literal notranslate"><em><span class="pre">n</span></em></code></dt><dd><p>Le jour Julien de base zéro (0 &lt;= <em>n</em> &lt;= 365). Les jours bissextiles sont comptés et il est possible de se référer au 29 février.</p>
+</dd>
+<dt><code class="samp docutils literal notranslate"><span class="pre">M</span><em><span class="pre">m</span></em><span class="pre">.</span><em><span class="pre">n</span></em><span class="pre">.</span><em><span class="pre">d</span></em></code></dt><dd><p>Le <em>d</em> jour (0 &lt;= <em>d</em> &lt;= 6) de la semaine <em>n</em> du mois <em>m</em> de l’année (1 &lt;= <em>n</em> &lt;= 5, 1 &lt;= <em>m</em> &lt;= 12, où semaine 5 signifie “le <em>dernier</em> jour du mois <em>m</em>” pouvant se produire au cours de la quatrième ou de la cinquième semaine). La semaine 1 est la première semaine au cours de laquelle le <em>jour</em> se produit. Le jour zéro est un dimanche.</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">time</span></code> a le même format que <code class="docutils literal notranslate"><span class="pre">offset</span></code> sauf qu’aucun signe de direction (<code class="docutils literal notranslate"><span class="pre">'-'</span></code> ou <code class="docutils literal notranslate"><span class="pre">'+'</span></code>) n’est autorisé. La valeur par défaut, si l’heure n’est pas spécifiée, est 02:00:00.</p>
+</dd>
+</dl>
+<div class="highlight-python3 notranslate" style="position: relative;"><div class="highlight"><span class="copybutton" title="Hide the prompts and output" style="cursor: pointer; position: absolute; top: 0px; right: 0px; border-color: rgb(170, 204, 153); border-style: solid; border-width: 1px; color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; padding-right: 0.2em; border-radius: 0px 3px 0px 0px;">&gt;&gt;&gt;</span><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'TZ'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'EST+05EDT,M4.1.0,M10.5.0'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">tzset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'</span><span class="si">%X</span><span class="s1"> </span><span class="si">%x</span><span class="s1"> %Z'</span><span class="p">)</span>
+<span class="go">'02:07:36 05/08/03 EDT'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'TZ'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'AEST-10AEDT-11,M10.5.0,M3.5.0'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">tzset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'</span><span class="si">%X</span><span class="s1"> </span><span class="si">%x</span><span class="s1"> %Z'</span><span class="p">)</span>
+<span class="go">'16:08:12 05/08/03 AEST'</span>
+</pre></div>
+</div>
+<p>Sur de nombreux systèmes Unix (y compris *BSD, Linux, Solaris et Darwin), il est plus pratique d’utiliser la base de données <em>zoneinfo</em> (<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/tzfile%20(5)">tzfile (5)</a></em>) du système pour spécifier les règles de fuseau horaire. Pour ce faire, définissez la variable d’environnement <span class="target" id="index-42"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">TZ</span></code> sur le chemin du fichier de fuseau horaire requis, par rapport à la racine de la base de données du système <em>zoneinfo</em>, généralement situé à <code class="file docutils literal notranslate"><span class="pre">/usr/share/zoneinfo</span></code>. Par exemple, <code class="docutils literal notranslate"><span class="pre">'US/Eastern'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Australia/Melbourne'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Egypt'</span></code> ou <code class="docutils literal notranslate"><span class="pre">'Europe/Amsterdam'</span></code>.</p>
+<div class="highlight-python3 notranslate" style="position: relative;"><div class="highlight"><span class="copybutton" title="Hide the prompts and output" style="cursor: pointer; position: absolute; top: 0px; right: 0px; border-color: rgb(170, 204, 153); border-style: solid; border-width: 1px; color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; padding-right: 0.2em; border-radius: 0px 3px 0px 0px;">&gt;&gt;&gt;</span><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'TZ'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'US/Eastern'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">tzset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">tzname</span>
+<span class="go">('EST', 'EDT')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'TZ'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Egypt'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">tzset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">tzname</span>
+<span class="go">('EET', 'EEST')</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="clock-id-constants">
+<span id="time-clock-id-constants"></span><h2>Constantes d’identification d’horloge<a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#clock-id-constants" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ces constantes sont utilisées comme paramètres pour <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.clock_getres" title="time.clock_getres"><code class="xref py py-func docutils literal notranslate"><span class="pre">clock_getres()</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.clock_gettime" title="time.clock_gettime"><code class="xref py py-func docutils literal notranslate"><span class="pre">clock_gettime()</span></code></a>.</p>
+<dl class="py data">
+<dt id="time.CLOCK_BOOTTIME">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_BOOTTIME</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_BOOTTIME" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Identique à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_MONOTONIC" title="time.CLOCK_MONOTONIC"><code class="xref py py-data docutils literal notranslate"><span class="pre">CLOCK_MONOTONIC</span></code></a>, sauf qu'elle inclut également toute suspension du système.</p>
+<p>Cela permet aux applications d’obtenir une horloge monotone tenant compte de la suspension sans avoir à gérer les complications de <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_REALTIME" title="time.CLOCK_REALTIME"><code class="xref py py-data docutils literal notranslate"><span class="pre">CLOCK_REALTIME</span></code></a>, qui peuvent présenter des discontinuités si l’heure est modifiée à l’aide de <code class="docutils literal notranslate"><span class="pre">settimeofday()</span></code> ou similaire.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Linux 2.6.39 et ultérieures.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_HIGHRES">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_HIGHRES</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_HIGHRES" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Le système d’exploitation Solaris dispose d’une horloge <code class="docutils literal notranslate"><span class="pre">CLOCK_HIGHRES</span></code> qui tente d’utiliser une source matérielle optimale et peut donner une résolution proche de la nanoseconde. <code class="docutils literal notranslate"><span class="pre">CLOCK_HIGHRES</span></code> est l’horloge haute résolution non ajustable.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Solaris.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_MONOTONIC">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_MONOTONIC</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_MONOTONIC" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Horloge qui ne peut pas être réglée et représente l’heure monotone depuis un point de départ non spécifié.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_MONOTONIC_RAW">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_MONOTONIC_RAW</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_MONOTONIC_RAW" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Similaire à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_MONOTONIC" title="time.CLOCK_MONOTONIC"><code class="xref py py-data docutils literal notranslate"><span class="pre">CLOCK_MONOTONIC</span></code></a>, mais donne accès à une heure matérielle brute qui n’est pas soumise aux ajustements NTP.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Linux 2.6.28 et ultérieur, MacOS 10.12 et ultérieur.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_PROCESS_CPUTIME_ID">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_PROCESS_CPUTIME_ID</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_PROCESS_CPUTIME_ID" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Minuterie haute résolution par processus du CPU.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_PROF">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_PROF</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_PROF" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Minuterie haute résolution par processus du CPU.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: FreeBSD, NetBSD 7 ou version ultérieure, OpenBSD.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_TAI">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_TAI</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_TAI" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p><a class="reference external" href="https://www.nist.gov/pml/time-and-frequency-division/nist-time-frequently-asked-questions-faq#tai">Temps Atomique International</a> (article en anglais)</p>
+<p>Le système doit avoir un tableau des secondes intercalaires pour pouvoir donner une réponse correcte. Les logiciels PTP ou NTP savent gérer un tableau des secondes intercalaires.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Linux.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.9.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_THREAD_CPUTIME_ID">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_THREAD_CPUTIME_ID</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_THREAD_CPUTIME_ID" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Horloge de temps CPU spécifique au fil d'exécution.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_UPTIME">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_UPTIME</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_UPTIME" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Heure dont la valeur absolue correspond à l’heure à laquelle le système a été exécuté et non suspendu, fournissant une mesure précise du temps de disponibilité, à la fois absolue et à intervalle.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: FreeBSD, OpenBSD 5.5 ou version ultérieure.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.CLOCK_UPTIME_RAW">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_UPTIME_RAW</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_UPTIME_RAW" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Horloge qui s'incrémente de manière monotone, en suivant le temps écoulé depuis un point arbitraire, n'est pas affectée par les ajustements de fréquence ou de temps et n'est pas incrémentée lorsque le système est en veille.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: MacOS 10.12 et ultérieur.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.8.</span></p>
+</div>
+</dd></dl>
+
+<p>La constante suivante est le seul paramètre pouvant être envoyé à <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.clock_settime" title="time.clock_settime"><code class="xref py py-func docutils literal notranslate"><span class="pre">clock_settime()</span></code></a>.</p>
+<dl class="py data">
+<dt id="time.CLOCK_REALTIME">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">CLOCK_REALTIME</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.CLOCK_REALTIME" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Horloge en temps réel à l’échelle du système. Le réglage de cette horloge nécessite des privilèges appropriés.</p>
+<p class="availability"><a class="reference internal" href="https://docs.python.org/fr/3/library/intro.html#availability"><span class="std std-ref">Disponibilité</span></a>&nbsp;: Unix.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Nouveau dans la version 3.3.</span></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="timezone-constants">
+<span id="time-timezone-constants"></span><h2>Constantes de fuseau horaire<a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#timezone-constants" title="Lien permanent vers ce titre">¶</a></h2>
+<dl class="py data">
+<dt id="time.altzone">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">altzone</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.altzone" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Décalage du fuseau horaire DST local, en secondes à l’ouest de UTC, s’il en est défini un. Cela est négatif si le fuseau horaire DST local est à l’est de UTC (comme en Europe occidentale, y compris le Royaume-Uni). Utilisez ceci uniquement si <code class="docutils literal notranslate"><span class="pre">daylight</span></code> est différent de zéro. Voir note ci-dessous.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.daylight">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">daylight</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.daylight" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Non nul si un fuseau horaire DST est défini. Voir note ci-dessous.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.timezone">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">timezone</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.timezone" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Décalage du fuseau horaire local (hors heure d’été), en secondes à l’ouest de l’UTC (négatif dans la plupart des pays d’Europe occidentale, positif aux États-Unis, nul au Royaume-Uni). Voir note ci-dessous.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="time.tzname">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">tzname</code><a class="headerlink" href="https://docs.python.org/fr/3/library/time.html#time.tzname" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Une paire de chaînes&nbsp;: la première est le nom du fuseau horaire local autre que DST, la seconde est le nom du fuseau horaire DST local. Si aucun fuseau horaire DST n’est défini, la deuxième chaîne ne doit pas être utilisée. Voir note ci-dessous.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour les constantes de fuseau horaire ci-dessus (<a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.altzone" title="time.altzone"><code class="xref py py-data docutils literal notranslate"><span class="pre">altzone</span></code></a>, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.daylight" title="time.daylight"><code class="xref py py-data docutils literal notranslate"><span class="pre">daylight</span></code></a>, <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.timezone" title="time.timezone"><code class="xref py py-data docutils literal notranslate"><span class="pre">timezone</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.tzname" title="time.tzname"><code class="xref py py-data docutils literal notranslate"><span class="pre">tzname</span></code></a>), la valeur est déterminée par les règles de fuseau horaire en vigueur au moment du chargement du module ou la dernière fois <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.tzset" title="time.tzset"><code class="xref py py-func docutils literal notranslate"><span class="pre">tzset()</span></code></a> est appelé et peut être incorrect pour des temps passés. Il est recommandé d’utiliser <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_gmtoff</span></code> et <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_zone</span></code> résulte de <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.localtime" title="time.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> pour obtenir des informations sur le fuseau horaire.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<dl class="simple">
+<dt>Module <a class="reference internal" href="https://docs.python.org/fr/3/library/datetime.html#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a></dt><dd><p>Interface plus orientée objet vers les dates et les heures.</p>
+</dd>
+<dt>Module <a class="reference internal" href="https://docs.python.org/fr/3/library/locale.html#module-locale" title="locale: Internationalization services."><code class="xref py py-mod docutils literal notranslate"><span class="pre">locale</span></code></a></dt><dd><p>Services d’internationalisation. Les paramètres régionaux affectent l’interprétation de nombreux spécificateurs de format dans <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strftime" title="time.strftime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strftime()</span></code></a> et <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.strptime" title="time.strptime"><code class="xref py py-func docutils literal notranslate"><span class="pre">strptime()</span></code></a>.</p>
+</dd>
+<dt>Module <a class="reference internal" href="https://docs.python.org/fr/3/library/calendar.html#module-calendar" title="calendar: Functions for working with calendars, including some emulation of the Unix cal program."><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code></a></dt><dd><p>Fonctions générales liées au calendrier. <a class="reference internal" href="https://docs.python.org/fr/3/library/calendar.html#calendar.timegm" title="calendar.timegm"><code class="xref py py-func docutils literal notranslate"><span class="pre">timegm()</span></code></a> est l’inverse de <a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#time.gmtime" title="time.gmtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> à partir de ce module.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="https://docs.python.org/fr/3/library/time.html#id1">1</a></span></dt>
+<dd><p>L'utilisation de <code class="docutils literal notranslate"><span class="pre">%Z</span></code> est maintenant obsolète, mais l'échappement <code class="docutils literal notranslate"><span class="pre">%z</span></code> qui donne le décalage horaire jusqu'à la minute et dépendant des paramètres régionaux n'est pas pris en charge par toutes les bibliothèques C ANSI. En outre, une lecture stricte du standard <span class="target" id="index-43"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a> de 1982 milite pour une année à deux chiffres (%y plutôt que %Y), mais la pratique a migré vers des années à 4 chiffres de long avant l'année 2000. Après cela, la <span class="target" id="index-44"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a> est devenue obsolète et l'année à 4 chiffres a été recommandée pour la première fois par la <span class="target" id="index-45"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1123.html"><strong>RFC 1123</strong></a> puis rendue obligatoire par la <span class="target" id="index-46"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper" style="float: left; margin-right: 0px; width: 202px; top: 4904.17px;">
+  <h3><a href="https://docs.python.org/fr/3/contents.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> — Accès au temps et conversions</a><ul>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#functions">Fonctions</a></li>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#clock-id-constants">Constantes d’identification d’horloge</a></li>
+<li><a class="reference internal" href="https://docs.python.org/fr/3/library/time.html#timezone-constants">Constantes de fuseau horaire</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="https://docs.python.org/fr/3/library/io.html" title="Chapitre précédent"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code> --- Core tools for working with streams</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="https://docs.python.org/fr/3/library/argparse.html" title="Chapitre suivant"><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code> -- Parseur d'arguments, d'options, et de sous-commandes de ligne de commande</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="https://docs.python.org/fr/3/bugs.html">Signalement de bogue</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/time.rst" rel="nofollow">Montrer le code source
+        </a>
+      </li>
+    </ul>
+  </div>
+        </div>
+      <div id="sidebarbutton" title="Réduire la barre latérale" style="border-radius: 0px 5px 5px 0px; color: rgb(68, 68, 68); background-color: rgb(204, 204, 204); font-size: 1.2em; cursor: pointer; height: 13557.5px; padding-top: 1px; padding-left: 1px; margin-left: 218px;"><span style="display: block; position: fixed; top: 293px;">«</span></div></div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="https://docs.python.org/fr/3/genindex.html" title="Index général">index</a></li>
+        <li class="right">
+          <a href="https://docs.python.org/fr/3/py-modindex.html" title="Index des modules Python">modules</a> |</li>
+        <li class="right">
+          <a href="https://docs.python.org/fr/3/library/argparse.html" title="argparse -- Parseur d&#39;arguments, d&#39;options, et de sous-commandes de ligne de commande">suivant</a> |</li>
+        <li class="right">
+          <a href="https://docs.python.org/fr/3/library/io.html" title="io --- Core tools for working with streams">précédent</a> |</li>
+
+          <li><img src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> »</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"><select id="language_select"><option value="en">English</option><option value="es">Spanish</option><option value="fr" selected="selected">French</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="pt-br">Brazilian Portuguese</option><option value="zh-cn">Simplified Chinese</option><option value="zh-tw">Traditional Chinese</option></select></div>
+            <div class="version_switcher_placeholder"><select id="version_select"><option value="3.11">dev (3.11)</option><option value="3.10" selected="selected">3.10.0</option><option value="3.9">3.9</option><option value="3.8">3.8</option><option value="3.7">3.7</option><option value="3.6">3.6</option><option value="3.5">3.5</option><option value="2.7">2.7</option></select></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="https://docs.python.org/fr/3/index.html">3.10.0 Documentation</a> »
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="https://docs.python.org/fr/3/library/index.html">La bibliothèque standard</a> »</li>
+          <li class="nav-item nav-item-2"><a href="https://docs.python.org/fr/3/library/allos.html">Services génériques du système d'exploitation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="https://docs.python.org/fr/3/library/time.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> — Accès au temps et conversions</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="https://docs.python.org/fr/3/search.html" method="get">
+          <input placeholder="Recherche rapide" aria-label="Recherche rapide" type="text" name="q">
+          <input type="submit" value="Go">
+          <input type="hidden" name="check_keywords" value="yes">
+          <input type="hidden" name="area" value="default">
+        </form>
+    </div>
+                     |
+                </li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    © <a href="https://docs.python.org/fr/3/copyright.html">Copyright</a> 2001-2021, Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    See <a href="https://docs.python.org/fr/3/library/time.html">History and License</a> for more information.
+    <br><br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+
+    Mis à jour le oct. 27, 2021.
+    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    <br>
+
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+
+    <script type="text/javascript" src="./time — Accès au temps et conversions — Documentation Python 3.10.0_files/switchers.js.téléchargement"></script>
+  
+</body></html>

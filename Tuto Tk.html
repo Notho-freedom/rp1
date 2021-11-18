@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://s15847115.domainepardefaut.fr/python/tkinter/resume.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Tuto Tk</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="https://s15847115.domainepardefaut.fr/python/tkinter/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+	<link rel="stylesheet" href="./Tuto Tk_files/w3.css">
+		<link rel="stylesheet" href="./Tuto Tk_files/w3-colors-win8.css">
+	<link rel="stylesheet" href="./Tuto Tk_files/font-awesome.min.css">
+	<script src="./Tuto Tk_files/w3data.js.téléchargement"></script> <!-- include-HTML -->
+	<script src="./Tuto Tk_files/codemirror.js.téléchargement"></script>
+	<script src="./Tuto Tk_files/python.js.téléchargement"></script>
+	<link rel="stylesheet" href="./Tuto Tk_files/codemirror.css">
+	<script src="./Tuto Tk_files/tkinter.js.téléchargement"></script>
+	<style>
+		.b {color:blue;}
+		.g {color:grey;}
+		.r {color:red;}
+		.v {color:limegreen;}
+		.p {color:purple;}
+	</style>
+</head>
+
+<body>
+<!-- Menu -->
+	<div w3-include-html="menu.html"></div>
+<div id="main">
+	<div w3-include-html="barre_menu.html"></div>
+
+<!-- Page -->
+	<div class="w3-row w3-container w3-row-padding"><!-- Rang 1 -->
+		
+		<div class="w3-half w3-section"><!-- Carte gauche -->
+			<div class="w3-card-4 w3-padding">
+				<h2><i class="fa fa-cubes" aria-hidden="true"></i> Mémento Tkinter</h2><br>
+				<p><a href="http://effbot.org/tkinterbook/tkinter-index.htm#class-reference">effbot.org</a><br>
+				<a href="https://tkdocs.com/tutorial/index.html">Widgets module ttk</a><br>
+				<a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html">Référence Tkinter</a><br></p>
+				<p><b>Code couleur et typographique</b><br> En italique, tous les éléments à <i>remplacer</i> (noms de variables, valeurs numériques, chaînes...) :<span class="v"> en <i>vert</i> les noms de variables</span> (sauf les noms de fenêtres en bleu), <span class="b">en <i>bleu</i> les fenêtres cibles</span> (quelles qu'elles soient), <span class="g">en <i>gris</i> les valeurs</span> (nombres, chaînes), <span class="r">en <i>rouge</i> les fonctions</span> associées aux widgets ou aux événements (appelées usuellement callback) et en <span class="p">en <i>violet</i> les événements</span>.<br>Tous les éléments de syntaxe en noir doivent être écrits tels quels en respectant la casse (majuscules/minsucules).<br>
+				Un slash "/" signale un choix entre plusieurs valeurs.<br>
+				 Rq : les couleurs sont des chaînes (noms ou code hexadécimal, voir plus loin).<br><br></p>
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/fenetre_proprietes.html" class="w3-button w3-border w3-border-green w3-round-large">Fenêtres</a>
+				<a href="https://s15847115.domainepardefaut.fr/python/tkinter/fenetre1_fenetre2.html" class="w3-button w3-border w3-border-green w3-round-large">Principale/Auxiliaire</a>
+				<a href="https://s15847115.domainepardefaut.fr/python/tkinter/fenetre_popup.html" class="w3-button w3-border w3-border-green w3-round-large">Principale/Modale</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<p>
+				<code>from tkinter import *</code><br>
+				<code><i class="b">nom_fenetre</i> = Tk()</code><br>
+				<code><i class="b">nom_fenetre</i>.title(<i class="g">chaîne</i>)</code><br>
+				<code><i class="b">nom_fenetre</i>.geometry('<i class="g">largeur</i> x <i class="g">hauteur</i> + <i class="g">xo</i> + <i class="g">yo</i>')</code><br>
+				<code><i class="b">nom_fenetre</i>['bg']=<i class="g">couleur</i></code><br>
+				<code><i class="b">nom_fenetre</i>['fg']=<i class="g">couleur</i></code><br>
+				<code>...</code><br>
+				<code><i class="b">nom_fenetre</i>.mainloop()</code><br><br>
+				<code><i class="b">autre_fenetre</i> = Toplevel()</code><br>
+				</p>
+				</div>	
+								
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/widget_button.html" class="w3-button w3-border w3-border-green w3-round-large">Button</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code>Button(<i class="b">cible</i>, text=<i class="g">chaîne</i>, bg=<i class="g">couleur</i>, fg=<i class="g">couleur</i>, command=<i class="r">callback</i>)</code>
+				<div class="w3-container w3-margin-left">
+					<code>configure(state=DISABLED/ACTIVE)</code><br>
+				</div>
+				</div>
+				</div>
+				
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/widget_label.html" class="w3-button w3-border w3-border-green w3-round-large">Label</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin-left">
+				<code>Label(<i class="b">cible</i>, text=<i class="g">chaîne</i>)</code><br><br>
+				</div>
+				<div class="w3-container w3-margin-left">
+				<code><i class="v">sv</i> = StringVar()</code><br>
+				<code>Label(<i class="b">cible</i>, textvariable=<i class="v">sv</i>)</code><br>
+				<code><i class="v">sv</i>.set(<i class="g">chaîne</i>)</code><br><br>
+				</div>
+				<div class="w3-container w3-margin-left">
+				<code>Label(<i class="b">cible</i>, image=<i class="g">nom_image_Tkinter</i>)</code> (voir "Images" plus loin)<br><br>
+				</div>
+				</div>
+				
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/widget_entry.html" class="w3-button w3-border w3-border-green w3-round-large">Entry</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code>Entry(<i class="b">cible</i> [, width=<i class="g">largeur</i>, <i class="g">autres options</i>])</code>
+				<div class="w3-container w3-margin-left">
+					<code>get()</code><br>
+					<code>insert(<i class="g">index</i>,<i class="g">chaîne</i>)</code><br>
+					<code>delete(0,END)</code><br>
+				</div>
+				</div>
+				</div>
+				
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/widget_canvas.html" class="w3-button w3-border w3-border-green w3-round-large">Canvas</a>
+				<a href="https://s15847115.domainepardefaut.fr/python/tkinter/collection.html" class="w3-button w3-border w3-border-green w3-round-large">Gestion objets</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code>Canvas(<i class="b">cible</i>, bg=<i class="g">couleur</i>, height=<i class="g">hauteur</i> , width=<i class="g">largeur</i> )</code>
+				<div class="w3-container w3-margin-left">
+					<code>create_line(<i class="g">x1</i>, <i class="g">y1</i>, <i class="g">x2</i>, <i class="g">y2</i>)</code><br>
+					<code>create_rectangle(<i class="g">x1</i>, <i class="g">y1</i>, <i class="g">x2</i>, <i class="g">y2</i>)</code><br>
+					<code>create_oval(<i class="g">x1</i>, <i class="g">y1</i>, <i class="g">x2</i>, <i class="g">y2</i>)</code><br>
+					<code>create_polygon(<i class="g">...</i>)</code><br>
+					<code>create_text(<i class="g">x</i>,<i class="g"> y</i>, text=<i class="g">chaîne</i>)</code><br>
+					<code>create_image(<i class="g">largeur</i>,<i class="g">hauteur</i>,image=PhotoImage(file=<i class="g">chemin_fichier</i>))</code>
+					<div class="w3-container w3-margin"><code>width=<i class="g">entier</i>, fill=<i class="g">couleur</i>, outline=<i class="g">couleur</i>, activefill=<i class="g">couleur</i>, state=NORMAL/DISABLED/HIDDEN</code></div>
+				</div>
+				<div class="w3-container w3-margin-left">
+					<code>coords(<i class="v">nom_objet</i>)</code><br>
+					<code>coords(<i class="v">nom_objet</i>, <i class="g">x</i>,<i class="g"> y</i>)</code><br>
+					<code>move(<i class="v">nom_objet</i>, <i class="g">dx</i>,<i class="g"> dy</i>)</code><br>
+					<code>delete(<i class="v">nom_objet</i>)</code><br>
+					<code>itemconfig(<i class="v">nom_objet</i>, attribut=<i class="g">valeur</i>)</code><br>
+					<code>findclosest(<i class="g">x</i>,<i class="g"> y</i>), find_all(), find_enclosed(), find_overlapping()...</code>
+					<code>itemcget(), itemconfig()</code>
+				</div>
+				</div>
+				</div>
+				
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/widget_autres.html" class="w3-button w3-border w3-border-green w3-round-large">Radiobutton Checkbutton Combobox</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code><i class="v">sv</i> = StringVar()</code><br>
+				<code><i class="v">sv</i>.set(<i class="g">valeur</i>)</code><br>
+				<code>Radiobutton(<i class="b">cible</i>, text=<i class="g">chaîne</i>, variable=<i class="v">sv</i>, value=<i class="g">valeur1</i>, command=<i class="r">callback</i>)</code><br>
+				<code>Radiobutton(<i class="b">cible</i>, text=<i class="g">chaîne</i>, variable=<i class="v">sv</i>, value=<i class="g">valeur2</i>, command=<i class="r">callback</i>)</code><br>
+				</div>
+				<div class="w3-container w3-margin">
+				<code><i class="v">iv</i> = IntVar()</code><br>
+				<code><i class="v">iv</i>.set(<i class="g">valeur</i>)</code><br>
+				<code>Checkbutton(<i class="b">cible</i>, text=<i class="g">chaîne</i>, variable=<i class="v">iv</i>, command=<i class="r">callback</i>)</code><br>
+				</div>
+				<div class="w3-container w3-margin">
+				<code><i class="v">sv</i> = StringVar()</code><br>
+				<code><i class="v">nom_variable</i> = ttk.Combobox(<i class="b">cible</i>, textvariable=<i class="v">sv</i>)</code><br>
+				<code><i class="v">nom_variable</i>['values'] = (<i class="g">valeur1</i>, <i class="g">valeur2</i>, <i class="g">valeur3</i>...)</code><br>
+				<code><i class="v">nom_variable</i>.current(<i class="g">n</i>)</code> (<i>n</i> est l'index de l'une des valeurs de la liste)<br>
+				<div class="w3-container w3-margin-left">
+					<code><code><i class="v">nom_variable</i>.bind('&lt;&lt;ComboboxSelected&gt;&gt;', <i class="r">callback</i>)</code></code>
+				</div>
+				</div>
+				</div>
+				
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/fenetre_widgets.html" class="w3-button w3-border w3-border-green w3-round-large">Placement</a>
+			<a href="https://s15847115.domainepardefaut.fr/python/tkinter/fenetre_disposition_pack.html" class="w3-button w3-border w3-border-green w3-round-large">pack</a>
+			<a href="https://s15847115.domainepardefaut.fr/python/tkinter/fenetre_disposition_grid.html" class="w3-button w3-border w3-border-green w3-round-large">grid et place</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code>pack(padx= , pady= , side=LEFT/RIGHT/TOP/BOTTOM, fill=X/Y/BOTH, expand=1)</code><br>
+				<code>grid(row= /rowspan=, column= /comumnspan=, sticky=E/W/N/S/W+E)</code><br>
+				<code>place(height= , width= , x= , y= )</code>
+				</div>
+				</div>
+				
+				<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/menus.html" class="w3-button w3-border w3-border-green w3-round-large">Menus et onglets</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code><i class="b">cible</i>.option_add('*tearOff', FALSE)</code><br>
+				<code><i class="v">nom_barre_menu</i> = Menu(<i class="b">cible</i>)</code><br>
+				<code><i class="b">cible</i>['menu'] = <i class="v">nom_barre_menu</i></code><br>
+				<code><i class="v">nom_menu</i> = Menu(<i class="v">nom_barre_menu</i>)</code> (autant que de menus)<br>
+				<code><i class="v">nom_barre_menu</i>.add_cascade(menu=<i class="v">nom_menu</i>, label=<i class="g">chaîne</i>)</code> (autant que de menus déroulants)<br>
+				<code><i class="v">nom_menu</i>.add_command(label=<i class="g">chaîne</i>, command=<i class="r">callback</i>)</code> (autant que d'items par menu déroulant)<br>
+				<div class="w3-container w3-margin-left">
+					<code><i class="v">nom_menu</i>.add_separator()</code><br>
+				</div>
+				</div>
+				<div class="w3-container w3-margin">
+				<code><i class="v">nom_barre_onglets</i> = ttk.Notebook(<i class="b">cible</i>)</code> (placement nécessaire)<br>
+				<code><i class="v">nom_onglet</i> = ttk.Frame(<i class="v">nom_barre_onglets</i>)</code> (autant que d'onglets, placement nécessaire)<br>
+				<code><i class="v">nom_barre_onglets</i>.add(<i class="v">nom_onglet</i>, text=<i class="g">chaîne</i>)</code> (autant que d'onglets)<br>
+				</div>
+				</div>
+				
+				<div class="w3-container w3-center"><!-- Pagination -->
+					<a href="https://s15847115.domainepardefaut.fr/python/tkinter/sons.html" class="w3-button w3-border">❮</a>
+					<a href="https://s15847115.domainepardefaut.fr/python/tkinter/resume.html#" class="w3-button w3-border  w3-text-grey">❯</a>
+				</div><!-- Fin pagination -->
+			</div>
+		</div><!-- Fin carte gauche -->
+		
+		<div class="w3-half w3-section"><!-- Carte droite -->
+			<div class="w3-card-4 w3-padding">
+			
+			<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/event_clavier.html" class="w3-button w3-border w3-border-green w3-round-large">Clavier</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code><i class="b">cible</i>.bind(<i class="p">événement</i>, <i class="r">callback</i>)</code>
+				<div class="w3-container w3-margin-left">
+					<code>"&lt;Key&gt;", "&lt;Up&gt;", "&lt;Down&gt;", "&lt;Left&gt;", "&lt;Right&gt;", "&lt;Return&gt;", "&lt;Cancel&gt;", "&lt;F1&gt;", "&lt;Space&gt;", "A", "a", "1"... </code><br>
+					<code>event.char</code>
+				</div>
+				</div>
+				</div>
+
+			<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/event_souris.html" class="w3-button w3-border w3-border-green w3-round-large">Souris</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code><i class="b">cible</i>.bind(<i class="p">événement</i>, <i class="r">callback</i>)</code>
+				<div class="w3-container w3-margin-left">
+					<code>"&lt;Button-1&gt;", "&lt;Double-Button-1&gt;", "&lt;B1-Motion&gt;"</code><br>
+					<code>event.x, event.y</code>
+				</div>
+				</div>
+				</div>
+				
+			<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/couleursTk.html" class="w3-button w3-border w3-border-green w3-round-large">Couleurs</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<p>Code couleur = chaîne hexadécimale. Exemple : <code>'#658ba5'</code></p>
+				
+				  <div class="w3-row w3-container">
+					<div class="w3-col s4 w3-container w3-center">
+					  <p>RED</p>
+					  <input onchange="hex()" type="range" id="inputRed" value="101" min="0" max="255">
+					  <div id="valRedx" style="color: white; background-color: rgb(94, 0, 0);">hex : 5e</div>
+					</div>
+					<div class="w3-col s4 w3-container w3-center">
+					  <p>GREEN</p>
+					  <input onchange="hex()" type="range" id="inputGreen" value="139" min="0" max="255">
+					  <div id="valGreenx" style="color: white; background-color: rgb(0, 184, 0);">hex : b8</div>
+					</div>
+					<div class="w3-col s4 w3-container w3-center">
+					  <p>BLUE</p>
+					  <input onchange="hex()" type="range" id="inputBlue" value="165" min="0" max="255">
+					  <div id="valBluex" style="color: white; background-color: rgb(0, 0, 165);">hex : a5</div>
+					</div>
+				  </div>
+				  
+				  <div class="w3-row w3-container" style="padding: 20px;">
+					<div class="w3-col m2 w3-container w3-center">
+					</div>
+					<div class="w3-col m8 w3-container w3-center">
+					  <div id="hex" style="line-height: 60px; color: black; font-weight: bold; background-color: rgb(94, 184, 165);">hexadécimal : #5eb8a5</div>
+					</div>
+					<div class="w3-col m2 w3-container w3-center">
+					</div>
+				  </div>
+				
+				</div>
+				</div>
+			
+			<h3><span class="w3-button w3-border w3-border-green w3-round-large">Images</span></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<p>Images au format <b>png</b> avec Pyzo, utiliser de préférence un chemin relatif (voir "Chemins" plus loin).</p>
+				<p><code><i class="g">chemin_fichier</i> = <i class="g">chaîne</i></code><br>
+				<code><i class="v">nom_image_Tkinter</i> = PhotoImage(file=<i class="g">chemin_fichier</i>)</code> (crée une image au format Tkinter). <br>
+				</p>
+				<div class="w3-container w3-margin-left">
+					<code>Label(<i class="b">cible</i>, image=<i class="v">nom_image_Tkinter</i>)</code><br>
+					<p>Ou bien</p>
+					<code><i class="v">nom_objet</i> = <i class="v">nom_canvas</i>.create_image(<i class="g">x</i>,<i class="g">y</i>, image=<i class="v">nom_image_Tkinter</i>)</code> <br>((<i>x</i>,<i>y</i>) = coordonnées du centre de l'image). <br>
+				</div>
+				</div>
+				</div>
+			
+			<h3><a href="https://s15847115.domainepardefaut.fr/python/tkinter/sons.html" class="w3-button w3-border w3-border-green w3-round-large">Sons</a></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<code>import winsound</code><br>
+				<code>winsound.PlaySound(<i class="g">'fichier_son.wav'</i>, winsound.SND_FILENAME|winsound.SND_ASYNC)</code>
+				<div class="w3-container w3-margin-left">
+					<code>time.sleep(<i class="g">durée</i>)</code> (<code>import time</code> nécessaire)<br>
+					<code>winsound.PlaySound(None, 0)</code><br>
+				</div>
+				</div>
+				</div>
+			
+			<h3><span class="w3-button w3-border w3-border-green w3-round-large">Chemins</span></h3>
+				<div class="w3-panel w3-border w3-round-large w3-border-grey w3-margin-left">
+				<div class="w3-container w3-margin">
+				<p>Chemin absolu (liens externes) : <br>
+				<code>'http://s15847115.domainepardefaut.fr/python/tkinter/resume.html'</code>.<br>
+				Chemin relatif (liens internes) : <br>
+				<code>'images/image.png'</code> ("image.png" situé dans le sous-dossier "images" du dossier courant).<br>
+				<code>'../images/image.png'</code> ("image.png" situé dans le sous-dossier "images" du dossier parent du dossier courant).<br>
+				</p><p>Avec Pyzo, si le <b>message d'erreur</b> <code><span class="w3-text-red">_tkinter.TclError: couldn't open <i>nom_fichier</i>: no such file or directory</span></code> s'affiche, <b>redémarrer le shell</b>.</p>
+				<p></p>
+				<p>Pour que les chemins relatifs fonctionnent sous Pyzo, il faut configurer le dossier de démarrage de Python : menu Shell / Configuration des shells.
+				"startDir" doit contenir le chemin vers votre dossier de travail (celui dans lequel le fichier .py est exécuté) (copie d'écran ci-dessous). <br>Par exemple, au lycée : U:\Documents\informatique</p>
+				<div class="w3-container w3-margin">
+					<img src="./Tuto Tk_files/config_shell.png" alt="Fenêtre - Widgets" class="w3-image">
+				</div>
+				</div>
+				</div>
+			
+			</div>
+		</div><!-- Fin carte droite -->
+		
+
+	</div><!-- Fin rang 1 -->
+
+</div>
+<script>
+	w3IncludeHTML();
+		var editor = CodeMirror.fromTextArea(code, {
+    lineNumbers: true
+	});
+	var editor = CodeMirror.fromTextArea(commentaires, {
+    lineNumbers: true
+	});
+</script>
+<script>
+function hex() {
+	r = document.getElementById("inputRed").value;
+	g = document.getElementById("inputGreen").value;
+	b = document.getElementById("inputBlue").value;
+	rx = Number(r).toString(16)
+	gx = Number(g).toString(16)
+	bx = Number(b).toString(16)
+	document.getElementById('valRedx').innerHTML = "hex : " + rx;
+	document.getElementById('valRedx').style.backgroundColor = "rgb(" + r + "," + 0 + "," + 0 + ")";
+	document.getElementById('valGreenx').innerHTML = "hex : " + gx;
+	document.getElementById('valGreenx').style.backgroundColor = "rgb(" + 0 + "," + g + "," + 0 + ")";
+    document.getElementById('valBluex').innerHTML = "hex : " + bx;
+	document.getElementById('valBluex').style.backgroundColor = "rgb(" + 0 + "," + 0 + "," + b + ")";
+	document.getElementById('hex').innerHTML = "hexadécimal : #" + rx + gx + bx;
+	document.getElementById('hex').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+	if ( Number(r)+ Number(g)+ Number(b)>250) {
+		document.getElementById('hex').style.color = "black";
+	} else {
+		document.getElementById('hex').style.color = "white";
+	}
+}
+hex()
+</script>
+
+
+</body></html>
